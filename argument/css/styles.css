@@ -160,10 +160,13 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 }
 .search_form input:focus {border-color: var(--akcent_color_hover);}
 .menu_btn {
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   border-radius: 12px;
   background-color: var(--akcent_color_hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section_services {margin: 100px 0 140px;}
 .services_title {color: var(--title_color_main);font-size: var(--title_size_main);margin-bottom: 30px;}
