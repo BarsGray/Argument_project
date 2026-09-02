@@ -37,24 +37,27 @@ a{color:inherit;}
 :root {
   --container_padding: 38px;
   --text_size_main_minus: 16px;
+  --title_size_main: 48px;
+  --title_color_main: #161616;
+  --akcent_color_hover: #FF0000;
+  --transition_02s: .2s ease-in-out;
 }
-body {
-  font-family: 'Onest';
-  font-weight: 400;
-  background-color: #F4F4F4;
+button {background-color: transparent;border: none;}
+body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
+.container {padding: 0 var(--container_padding);max-width: calc(1410px + var(--container_padding) * 2);margin: 0 auto;}
+.header_main_btn {
+  white-space: nowrap;
+  color: var(--akcent_color_hover);
+  border: 2px solid var(--akcent_color_hover);
+  border-radius: 12px;
+  padding: 10px 27px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 40px;
+  background-color: #fff;
 }
-.container {
-  padding: 0 var(--container_padding);
-  max-width: calc(1410px + var(--container_padding) * 2);
-  margin: 0 auto;
-}
-.header {
-  margin-bottom: 44px;
-}
-.header_top_row {
-  padding: 8px 0 7px;
-  border-bottom: 1px solid #D7D7D7;
-}
+.header {margin-bottom: 44px;}
+.header_top_row {padding: 8px 0 7px;border-bottom: 1px solid #D7D7D7;}
 .header_top_row .container {
   display: flex;
   justify-content: space-between;
@@ -63,10 +66,11 @@ body {
 }
 .header_contacts {display: flex;justify-content: space-between;align-items: center;gap: 20px;}
 .header_top_row .adress {display: flex;gap: 4px;align-items: center;color: #353535;}
-.header_top_row a {display: flex;gap: 4px;align-items: center;}
-.header_nav_row {
-  margin-top: 30px;
-}
+.header_top_row a {display: flex;gap: 4px;align-items: center;transition: color var(--transition_02s);}
+.header_top_row a path {transition: stroke var(--transition_02s);}
+.header_top_row a:active path {stroke: var(--akcent_color_hover);}
+.header_top_row a:active {color: var(--akcent_color_hover);}
+.header_nav_row {margin-top: 30px;}
 .header_nav_row .container {
   display: flex;
   gap: 30px;
@@ -79,27 +83,77 @@ body {
   gap: 20px;
   width: 100%;
 }
-.header_menu_box nav {
-  width: 100%;
-  margin: 0 auto;
-}
-.header_menu_box nav ul {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-.header_menu_box nav ul li {
-  margin: 0 auto;
-}
+.header_menu_box nav {width: 100%;margin: 0 auto;}
+.header_menu_box nav ul {display: flex;gap: 20px;align-items: center;}
+.header_menu_box li {margin: 0 auto;}
+.header_menu_box li a {color: #4E4E4E; transition: color var(--transition_02s);}
+.header_menu_box li a:active {color: var(--akcent_color_hover);}
 .header_menu_box form.search_form {white-space: nowrap;}
-.header_main_btn {
-  white-space: nowrap;
+.search_form {min-width: 212px;position: relative;}
+.search_form input {
+  width: 100%;
+  border: 2px solid #DDDDDD;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 8px 10px 9px 36px;
+  color: #4E4E4E;
+  transition: border-color var(--transition_02s);
+  height: 40px;
 }
+.search_form button {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+}
+.search_form input:focus {border-color: var(--akcent_color_hover);}
+.section_services {margin: 50px 0;}
+.services_title {color: var(--title_color_main);font-size: var(--title_size_main);margin-bottom: 30px;}
+.services_box {display: grid;grid-template-columns: repeat(3, 1fr);gap: 30px;}
+.services_item {padding: 30px;background-color: #fff;border-radius: 20px;}
+.services_icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+.services_name {
+  color: var(--title_color_main);
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 20px ;
+}
+.services_text {
+  font-size: var(--text_size_main_minus);
+  color: #4A4A4A;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.services_btn {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: #7E7E7E;
+}
+.services_btn svg {vertical-align: middle;margin-left: 4px;}
 
+
+@media (hover: hover) {
+  .header_menu_box li a:hover {color: var(--akcent_color_hover);}
+  .header_top_row a:hover {color: var(--akcent_color_hover);}
+  .header_top_row a:hover path {stroke: var(--akcent_color_hover);}
+  .search_form:hover input {border-color: var(--akcent_color_hover);}
+}
 @media (max-width: 1100px) {
   :root {
     --container_padding: 20px;
     --text_size_main_minus: 15px;
+    --title_size_main: 32px;
   }
 }
 @media (max-width: 750px) {
@@ -111,5 +165,6 @@ body {
 @media (max-width: 610px) {
   :root {
     --container_padding: 13px;
+    --title_size_main: 26px;
   }
 }
