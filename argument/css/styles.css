@@ -36,11 +36,13 @@ a{color:inherit;}
 /* ============================================================================================== */
 :root {
   --container_padding: 38px;
+  --text_size_main: 24px;
   --text_size_main_minus: 16px;
   --title_size_main: 48px;
   --title_color_main: #161616;
   --akcent_color_hover: #FF0000;
   --transition_02s: .2s ease-in-out;
+
 }
 button {background-color: transparent;border: none;}
 body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
@@ -109,10 +111,17 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   height: 24px;
 }
 .search_form input:focus {border-color: var(--akcent_color_hover);}
-.section_services {margin: 50px 0;}
+.section_services {margin: 100px 0 140px;}
 .services_title {color: var(--title_color_main);font-size: var(--title_size_main);margin-bottom: 30px;}
 .services_box {display: grid;grid-template-columns: repeat(3, 1fr);gap: 30px;}
-.services_item {padding: 30px;background-color: #fff;border-radius: 20px;}
+.services_item {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px 0px #E8E8E8;
+  border: 2px solid transparent;
+  transition: border var(--transition_02s);
+}
 .services_icon {
   display: block;
   width: 40px;
@@ -139,27 +148,93 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   font-weight: 500;
   font-size: 16px;
   color: #7E7E7E;
+  transition: color var(--transition_02s);
 }
-.services_btn svg {vertical-align: middle;margin-left: 4px;}
+.services_btn svg {vertical-align: center;margin-left: 4px;transition: all var(--transition_02s);}
+.services_btn path {transition: all var(--transition_02s);}
+.section_integration {margin: 80px 0 140px;}
+.integration_top_row {display: flex;margin-bottom: 80px;gap: 30px;}
+.integration_top_row p {flex: 1 1 0;}
+.integration_title {font-size: var(--title_size_main);line-height: 1.2;}
+.integration_text {font-size: var(--text_size_main);line-height: 1.4;}
+.integration_steps {display: flex;gap: 30px;}
+.steps_item {flex: 1 1 0;}
+.steps_item_header {padding-bottom: 39px;}
+.steps_item_num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 23px;
+  background-color: #E8E8E8;
+  font-size: 32px;
+  line-height: 1.4;
+  color: #565656;
+}
+.steps_item_body {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.steps_item_body::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3c3c3c33;
+  width: calc(100% + 30px);
+}
+.steps_item_body::after {
+  content: '';
+  position: absolute;
+  top: -7.5px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--akcent_color_hover);
+  border-radius: 6px;
+  transform: rotate(45deg);
+}
+.steps_item:last-child .steps_item_body::before {width: 100%;background: linear-gradient(90deg, rgba(60, 60, 60, 0.2) 1.74%, rgba(255, 255, 255, 0) 74.13%);}
+.steps_item_title {font-size: var(--text_size_main);line-height: 1.4;margin-bottom: 20px;}
+.steps_item_text {font-size: var(--text_size_main_minus);line-height: 1.4;}
 
+
+
+
+footer{padding: 200px 0;}
 
 @media (hover: hover) {
   .header_menu_box li a:hover {color: var(--akcent_color_hover);}
   .header_top_row a:hover {color: var(--akcent_color_hover);}
   .header_top_row a:hover path {stroke: var(--akcent_color_hover);}
   .search_form:hover input {border-color: var(--akcent_color_hover);}
+  .services_item:hover {border-color: var(--akcent_color_hover);}
+  .services_item:hover .services_btn {color: var(--akcent_color_hover);}
+  .services_item:hover path {stroke: var(--akcent_color_hover);}
 }
 @media (max-width: 1100px) {
   :root {
     --container_padding: 20px;
     --text_size_main_minus: 15px;
     --title_size_main: 32px;
+    --text_size_main: 22px;
   }
+  .integration_steps {gap: 13px;}
+  .steps_item_header {padding-bottom: 25px;}
+  .steps_item_body {padding-top: 25px;}
+  .steps_item_num {font-size: 26px;}
+  .integration_top_row {gap: 13px;}
 }
 @media (max-width: 750px) {
   :root {
     --container_padding: 20px;
     --text_size_main_minus: 14px;
+    --text_size_main: 18px;
   }
 }
 @media (max-width: 610px) {
