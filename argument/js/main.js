@@ -13,7 +13,6 @@ function resetSubMenu() {
 footerMenuLinkList.forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-  console.log('click');
     if (window.innerWidth > 1000) return;
     
     const subMenu = e.currentTarget.nextElementSibling;
