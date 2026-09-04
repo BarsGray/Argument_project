@@ -245,6 +245,43 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .steps_item_title {font-size: var(--text_size_main);line-height: 1.4;margin-bottom: 20px;}
 .steps_item_text {font-size: var(--text_size_main_minus);line-height: 1.4;}
 
+.section_form {margin: 140px 0;}
+.section_form .form_box {padding: 60px;border-radius: 30px;background-color: #E5E5E5;display: flex;}
+.section_form .action_box {margin-right: 64px;}
+.section_form .action_title {font-size: var(--title_size_main); line-height: 1.2;margin-bottom: 20px;}
+.section_form .action_text {font-size: var(--text_size_main);line-height: 1.4;color: #323232;}
+.form_box form {display: flex; flex-direction: column;gap: 24px;}
+.form_box form input[type='text']::placeholder,form input[type='tel']::placeholder {color: #323232;}
+.form_box form input[type='text'],form input[type='tel'] {font-size: 16px;line-height: 1.4;padding: 10px 16px;border: 1px solid #D2D2D2;border-radius: 12px;}
+.form_box form input[type="checkbox"] {position: absolute;z-index: -1;opacity: 0;}
+.form_box label {position: relative;padding-left: 32px;display: block;}
+.form_box input[type="checkbox"] + span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--akcent_color_hover);
+  border-radius: 8px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+.form_box form input[type="checkbox"] + span::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  width: 6px;
+  height: 10px;
+  border: 1px solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: all 0.2s ease;
+}
+.form_box input[type="checkbox"]:checked + span::after {transform: rotate(45deg) scale(1);}
+.form_box button[type="submit"] {width: 100%;background-color: var(--akcent_color_hover);text-align: center;padding: 11px 100px;color: #fff;border-radius: 12px;border: 1px solid var(--akcent_color_hover);}
+
 footer{background-color: #E5E5E5;}
 .footer_top_inner .container {display: flex;justify-content: space-between;padding-top: var(--footer_padding_top); padding-bottom: 80px;gap: 30px;}
 .footer_main_btn {padding: 12px 99px; box-shadow: 0px 10px 40px 0px #FFA2A2CC;height: fit-content;width: 100%;}
@@ -325,6 +362,7 @@ footer{background-color: #E5E5E5;}
     --container_padding: 20px;
     --text_size_main_minus: 14px;
     --text_size_main: 18px;
+    --title_size_main: 26px;
   }
   .search_form {display: none;}
   .header_top_row {display: none;}
@@ -339,7 +377,6 @@ footer{background-color: #E5E5E5;}
 @media (max-width: 610px) {
   :root {
     --container_padding: 13px;
-    --title_size_main: 26px;
   }
   .section_integration {display: none;}
   .services_box {grid-template-columns: 1fr;}
