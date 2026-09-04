@@ -1,3 +1,10 @@
+// ======================= swiper_labels ==========================
+const labels_swiper = new Swiper('.labels_swiper', {
+  loop: true,
+  slidesPerView: 'auto',
+  slidesPerGroup: 1,
+  spaceBetween: 30
+});
 // ======================= footer_menu ==========================
 const footerMenuLinkList = document.querySelectorAll('.footer_mid nav>ul>li.menu-item-has-children a');
 

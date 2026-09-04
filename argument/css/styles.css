@@ -246,20 +246,31 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .steps_item_text {font-size: var(--text_size_main_minus);line-height: 1.4;}
 
 .section_form {margin: 140px 0;}
-.section_form .form_box {padding: 60px;border-radius: 30px;background-color: #E5E5E5;display: flex;}
-.section_form .action_box {margin-right: 64px;}
+.section_form .form_box {padding: 60px;border-radius: 30px;background-color: #E5E5E5;display: flex;gap: 34px;}
+.section_form .action_box {max-width: 660px;}
 .section_form .action_title {font-size: var(--title_size_main); line-height: 1.2;margin-bottom: 20px;}
 .section_form .action_text {font-size: var(--text_size_main);line-height: 1.4;color: #323232;}
-.form_box form {display: flex; flex-direction: column;gap: 24px;}
+.form_box form {display: flex; flex-direction: column;gap: 24px;max-width: 563px;}
 .form_box form input[type='text']::placeholder,form input[type='tel']::placeholder {color: #323232;}
-.form_box form input[type='text'],form input[type='tel'] {font-size: 16px;line-height: 1.4;padding: 10px 16px;border: 1px solid #D2D2D2;border-radius: 12px;}
-.form_box form input[type="checkbox"] {position: absolute;z-index: -1;opacity: 0;}
+.form_box form input[type='text'],form input[type='tel'] {
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 10px 16px;
+  border: 1px solid #D2D2D2;
+  border-radius: 12px;
+  transition: border-color var(--transition_03s);
+  width: 100%;
+}
+.form_box form input[type='text']:focus,form input[type='tel']:focus {border-color: var(--akcent_color_hover);}
+.form_box form input[type="checkbox"] {position: absolute;z-index: -1;opacity: 0;width: 0;height: 0;}
 .form_box label {position: relative;padding-left: 32px;display: block;}
+.form_box label a,.form_box label {font-size: var(--text_size_main_minus);color: #383838;line-height: 1.4;}
 .form_box input[type="checkbox"] + span::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
+  color: inherit;
   width: 22px;
   height: 22px;
   border: 2px solid var(--akcent_color_hover);
@@ -280,7 +291,31 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   transition: all 0.2s ease;
 }
 .form_box input[type="checkbox"]:checked + span::after {transform: rotate(45deg) scale(1);}
-.form_box button[type="submit"] {width: 100%;background-color: var(--akcent_color_hover);text-align: center;padding: 11px 100px;color: #fff;border-radius: 12px;border: 1px solid var(--akcent_color_hover);}
+.form_box button[type="submit"] {
+  width: 100%;
+  background-color: var(--akcent_color_hover);
+  text-align: center;
+  padding: 9px 100px;
+  color: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--akcent_color_hover);
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0px 10px 40px 0px #FFA2A2CC;
+  transition: all var(--transition_03s);
+}
+.label_logo {
+  border-radius: 30px;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  width: 210px;
+  height: 110px;
+}
+.labels_list li {
+  width: auto;
+}
 
 footer{background-color: #E5E5E5;}
 .footer_top_inner .container {display: flex;justify-content: space-between;padding-top: var(--footer_padding_top); padding-bottom: 80px;gap: 30px;}
@@ -308,11 +343,14 @@ footer{background-color: #E5E5E5;}
   .footer_main_btn:hover,.header_main_btn:hover {border-color: #161616;background-color: #161616;color: #fff;}
   .footer_mid nav>ul li:not(.menu-item-has-children) a:hover {color: var(--akcent_color_hover);}
   a.footer_contact:hover {color: var(--akcent_color_hover);}
+  .form_box button[type="submit"]:hover {box-shadow: 0px 10px 40px 0px #FF202066;background-color: #DE0000;border-color: #DE0000;}
+  .form_box form input[type='text']:hover,form input[type='tel']:hover {border-color: var(--akcent_color_hover);}
 }
 @media (max-width: 1350px) {
   .header_menu_box nav {display: none;}
   .menu_btn {display: flex;}
   .search_form {width: 100%;min-width: unset;}
+  .form_box form {min-width: 400px;}
   .footer_main_btn {padding: 12px 50px;}
 }
 @media (max-width: 1100px) {
@@ -329,14 +367,24 @@ footer{background-color: #E5E5E5;}
   .steps_item_num {font-size: 26px;}
   .integration_top_row {gap: 13px;}
   .integration_top_row{margin-bottom: 40px;}
+  .section_services {margin: 80px 0 120px;}
   .services_box {grid-template-columns: repeat(2, 1fr);gap: 12px;}
   .services_name,.services_text {margin-bottom: 16px;}
+  .section_form {margin: 120px 0 160px;}
+  .section_form .form_box {padding: 40px;}
+  .form_box form {min-width: unset;}
+  .section_form .form_box {gap: 20px;}
+  .section_form .form_box>div {flex: 1 1 0;}
   .footer_copy_inner .container {padding-top: 12px; padding-bottom: 12px;}
 }
 @media (max-width: 1000px) {
   :root {
     --footer_padding_top: 20px;
   }
+  .section_form .form_box {flex-direction: column;gap: 30px;}
+  .section_form .action_box {max-width: unset;}
+  
+  .form_box form {max-width: unset;}
   .footer_top_inner .container {flex-direction: column-reverse;position: relative;}
   .footer_right {grid-template-columns: repeat(2, 1fr);row-gap: 60px;margin-bottom: 30px;}
   .footer_main_btn {grid-column: 2;padding: 12px 39px;margin-left: auto;width: fit-content;}
@@ -370,9 +418,14 @@ footer{background-color: #E5E5E5;}
   .integration_steps {display: grid;grid-template-columns: repeat(2, 1fr);row-gap: 60px;}
   .steps_item_body {padding-top: 20px;}
   .steps_item_body::before {display: none;}
+  .section_services {margin: 60px 0 100px;}
   .services_item {padding: 18px;}
   .services_icon {margin-bottom: 16px;}
   .services_name,.services_text {margin-bottom: 12px;}
+  .section_form .action_title {
+    margin-bottom: 16px;
+  }
+  .section_form {margin: 100px 0 120px;}
 }
 @media (max-width: 610px) {
   :root {
@@ -380,6 +433,7 @@ footer{background-color: #E5E5E5;}
   }
   .section_integration {display: none;}
   .services_box {grid-template-columns: 1fr;}
+  .section_form .form_box {padding: 20px;}
   .footer_left {text-align: center;right: var(--container_padding);}
   .footer_right {padding-top: 60px;grid-template-columns: 1fr;row-gap: 30px;}
   .footer_main_btn {width: 100%; grid-column: 1;margin-bottom: 30px;}
