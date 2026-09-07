@@ -313,9 +313,33 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   width: 210px;
   height: 110px;
 }
-.labels_list li {
-  width: auto;
+.labels_marquee {
+  max-width: 3000px;
+  margin: 0 auto;
+  overflow: hidden;
 }
+.labels_track {
+  display: flex;
+  width: max-content;
+  animation: logos-scroll 25s linear infinite;
+}
+.labels_list {
+  display: flex;
+  flex-shrink: 0;
+  padding-right: 24px;
+}
+.labels_list li {
+  padding-right: 24px;
+}
+.labels_list li:last-child {
+  padding-right: 0;
+}
+@keyframes logos-scroll {
+  from {transform: translateX(0);}
+  to {transform: translateX(-50%);}
+}
+
+
 
 footer{background-color: #E5E5E5;}
 .footer_top_inner .container {display: flex;justify-content: space-between;padding-top: var(--footer_padding_top); padding-bottom: 80px;gap: 30px;}

@@ -1,10 +1,17 @@
-// ======================= swiper_labels ==========================
-const labels_swiper = new Swiper('.labels_swiper', {
-  loop: true,
-  slidesPerView: 'auto',
-  slidesPerGroup: 1,
-  spaceBetween: 30
-});
+// ======================= marquee ==========================
+  const marquee = document.querySelector('.labels_marquee');
+  const track = document.querySelector('.labels_track');
+  const original = document.querySelector('.labels_list');
+  const label_elem = document.querySelectorAll('.labels_list li');
+
+  const count = Math.ceil(3000 / original.scrollWidth) + Math.floor(3000 / (label_elem[0].scrollWidth * label_elem.length));
+
+  for (let i = 0; i < count; i++) {
+    const clone = original.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  }
+
 // ======================= footer_menu ==========================
 const footerMenuLinkList = document.querySelectorAll('.footer_mid nav>ul>li.menu-item-has-children a');
 
