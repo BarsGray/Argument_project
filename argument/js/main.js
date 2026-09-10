@@ -1,3 +1,19 @@
+// ======================= swiper_bunner ==========================
+  const bunner_swiper = new Swiper('.bunner_swiper', {
+    loop: true,
+    centeredSlides: false,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".bunner_btn_next",
+      prevEl: ".bunner_btn_prev"
+    },
+    pagination: {
+      el: ".bunner_pagination",
+      clickable: true,
+    }
+  });
 // ======================= marquee ==========================
   const marquee = document.querySelector('.labels_marquee');
   const track = document.querySelector('.labels_track');
@@ -11,7 +27,6 @@
     clone.setAttribute('aria-hidden', 'true');
     track.appendChild(clone);
   }
-
 // ======================= footer_menu ==========================
 const footerMenuLinkList = document.querySelectorAll('.footer_mid nav>ul>li.menu-item-has-children a');
 
