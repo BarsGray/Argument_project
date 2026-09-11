@@ -109,13 +109,10 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .header_menu_box li a:active {color: var(--akcent_color_hover);}
 .header_menu_box form.search_form {white-space: nowrap;}
 
+.section_bunner {margin: 44px 0 100px;}
+.section_bunner .container {position: relative;}
 .bunner_swiper {border-radius: 30px;}
-.bunner_content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 600px;
-}
+.bunner_content {display: flex;flex-direction: column;justify-content: space-between;max-width: 600px;}
 .bunner_slide {
   position: relative;
   padding: 103px 90px;
@@ -124,22 +121,18 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   overflow: hidden;
 }
 .bunner_slide_title {font-size: var(--bunner_size_main);color: #fff;margin-bottom: 30px;}
-.bunner_slide_text {
-  font-size: var(--text_size_main_minus);
-  line-height: 1.6;
-  color: #fff;
-  margin-bottom: 30px;
-}
+.bunner_slide_text {font-size: var(--text_size_main_minus);line-height: 1.6;color: #fff;margin-bottom: 30px;}
 .bunner_slide_btn {
   display: block;
   font-size: 16px;
   color: #fff;
   padding: 12px 28px;
-  background-color: #FF0000;
+  background-color: var(--akcent_color_hover);
   border-radius: 12px;
   font-weight: 500;
   line-height: 1;
   width: fit-content;
+  transition: all var(--transition_03s);
 }
 .bunner_img {
   position: absolute;
@@ -152,38 +145,63 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   background-repeat: no-repeat;
   z-index: -1;
 }
-.bunner_pagination {
+.bunner_swiper>.bunner_pagination {
+  --swiper-pagination-bottom: 30px;
+  --swiper-pagination-color: #000;
   position: absolute;
   text-align: center;
+  padding: 10px;
   z-index: 9;
-  font-size: 10px;
   background-color: #CCCCCC80;
-  --swiper-pagination-color: #000;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
 }
-.swiper-pagination-bullet-active {
-  width: 20px;
-}
-.swiper-pagination-bullet {
+.bunner_swiper .swiper-pagination-bullet {
   transition: all .3s ease-in-out;
   --swiper-pagination-bullet-inactive-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   border-radius: 31px;
+  height: 10px;
+  width: 10px;
+  opacity: 1;
 }
-.bunner_btn_next {
+.bunner_swiper .swiper-pagination-bullet-active {width: 20px;}
+.bunner_btn_prev,.bunner_btn_next {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 44px;
+  height: 44px;
+  top: 50%;
   z-index: 9;
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  /* display: block; */
+  border-radius: 16px;
+  transition: all var(--transition_02s),boxShadow var(--transition_03s);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
 }
-.bunner_btn_prev {
+.bunner_btn_prev {left: calc(0px + var(--container_padding));transform: translate(-50%, -50%);}
+.bunner_btn_next {right: calc(0px + var(--container_padding));transform: translate(50%, -50%);}
+.bunner_btn_prev::before,.bunner_btn_next::before {
+  content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%,-50%);
 }
-
+.bunner_btn_next::before {background: url('../img/bun_btn_next.svg');}
+.bunner_btn_prev::before {background: url('../img/bun_btn_prev.svg');}
+.bunner_btn_prev:active, .bunner_btn_next:active {
+  border: 2px solid var(--akcent_color_hover);
+  box-shadow: 0px 8px 16px 0px #DB7C3266;
+}
+.bunner_btn_prev:active {transform: translate(-50%, -50%) scale(.7);}
+.bunner_btn_next:active {transform: translate(50%, -50%) scale(.7);}
 
 .search_form {min-width: 212px;position: relative;}
 .search_form input {
@@ -454,6 +472,8 @@ footer{background-color: #E5E5E5;}
   .header_menu_box li a:hover {color: var(--akcent_color_hover);}
   .header_top_row a:hover {color: var(--akcent_color_hover);}
   .header_top_row a:hover path {stroke: var(--akcent_color_hover);}
+  .bunner_slide_btn:hover {background-color: #DE0000;box-shadow: 0px 10px 40px 0px #FF202066;}
+  .bunner_btn_prev:hover, .bunner_btn_next:hover {border: 2px solid var(--akcent_color_hover);}
   .search_form:hover input {border-color: var(--akcent_color_hover);}
   .services_item:hover {border-color: var(--akcent_color_hover);}
   .services_item:hover .services_btn {color: var(--akcent_color_hover);}
@@ -475,21 +495,20 @@ footer{background-color: #E5E5E5;}
   .qr_content {margin-right: 25.6%;}
 }
 @media (max-width: 1250px) {
-  .bunner_slide {
-    min-height: 320px;
-  }
-  .bunner_slide {padding: 56px 50px;}
-  
+  .bunner_slide {min-height: 320px;}
+  .bunner_slide {padding: 60px 50px;}
+  .bunner_swiper>.bunner_pagination {--swiper-pagination-bottom:20px;}
 }
 @media (max-width: 1100px) {
   :root {
-    --container_padding: 20px;
     --text_size_main_minus: 15px;
     --title_size_main: 32px;
     --text_size_main: 22px;
     --footer_padding_top: 40px;
     --bunner_size_main: 40px;
   }
+  .header {margin-bottom: 34px;}
+  .header_nav_row {margin-top: 20px;}
   .integration_steps {gap: 13px;}
   .steps_item_header {padding-bottom: 25px;}
   .steps_item_body {padding-top: 25px;}
@@ -528,6 +547,9 @@ footer{background-color: #E5E5E5;}
   .bunner_content {max-width: 510px;}
   .bunner_slide_title {margin-bottom: 20px;}
   .bunner_slide_text {margin-bottom: 20px;}
+  .bunner_swiper {border-radius: 20px;}
+  .bunner_slide {border-radius: 20px;}
+  .section_bunner {margin: 34px 0 80px;}
 }
 @media (max-width: 1000px) {
   :root {
@@ -594,6 +616,8 @@ footer{background-color: #E5E5E5;}
     padding: 10px;
     border-radius: 12px;
   }
+  .bunner_swiper>.bunner_pagination {--swiper-pagination-bottom:0;}
+  .bunner_btn_prev,.bunner_btn_next {display: none;}
 }
 @media (max-width: 750px) {
   :root {
@@ -603,6 +627,8 @@ footer{background-color: #E5E5E5;}
     --title_size_main: 26px;
     --bunner_size_main: 34px;
   }
+  .header {margin-bottom: 30px;}
+  .section_bunner {margin: 30px 0 60px;}
   .search_form {display: none;}
   .header_top_row {display: none;}
   .bunner_slide_btn {font-size: 14px;}
@@ -630,6 +656,7 @@ footer{background-color: #E5E5E5;}
   :root {
     --container_padding: 13px;
   }
+  .header_nav_row {margin-top: 10px;}
   .section_integration {display: none;}
   .services_box {grid-template-columns: 1fr;}
   .section_form .form_box {padding: 20px;}
