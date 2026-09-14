@@ -73,3 +73,17 @@ footerMenuLinkList.forEach((link) => {
     }
   });
 });
+// ======================= footer_menu ==========================
+const accordionList = document.querySelectorAll('.accordion');
+accordionList.forEach((acc) => {
+  acc.addEventListener('click', (e) => {
+    const accItem = e.target.closest('.accordion_item');
+    if(accItem) {
+      // const accItemTitle = accItem.querySelector('.accordion_item_title');
+      const accItemText  = accItem.querySelector('.accordion_item_text');
+
+      accItem.classList.add('active');
+      accItemText.style.maxHeight = accItemText.scrollHeight + 'px';
+    }
+  });
+});

@@ -219,6 +219,52 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   max-width: 70%;
 }
 
+.section_accordion {margin: 40px 0 100px;}
+.section_accordion .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.accordion_left_box {max-width: 450px;}
+.accordion_right_box {max-width: 810px;}
+.accordion_title {
+  font-size: var(--title_size_main);
+  color: var(--title_color_main);
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+.accordion_text {
+  color: #4A4A4A;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.accordion_item_title {
+  font-size: 24px;
+  line-height: 1.4;
+  transition: margin var(--transition_03s);
+}
+.accordion_item + .accordion_item {
+  border-top: 1px solid #D5D5D5;
+  margin-top: 40px;
+  padding-top: 40px;
+}
+.accordion_item.active .accordion_item_title {
+  color: var(--akcent_color_hover);
+  margin-bottom: 20px;
+}
+.accordion_item_text {
+  color: #262626;
+  font-size: var(--text_size_main_minus);
+  line-height: 1.4;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--transition_03s);
+}
+.accordion_item.active .accordion_item_text {
+  max-height: 200px;
+}
+
+
 .section_services_tubs {margin: 40px 0;}
 .services_tubs_row {
   display: flex;
@@ -313,7 +359,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .section_integration {margin: 80px 0 140px;}
 .integration_top_row {display: flex;margin-bottom: 80px;gap: 30px;}
 .integration_top_row p {flex: 1 1 0;}
-.integration_title {font-size: var(--title_size_main);line-height: 1.2;}
+.integration_title {font-size: var(--title_size_main);color: var(--title_color_main);line-height: 1.2;}
 .integration_text {font-size: var(--text_size_main);line-height: 1.4;}
 .integration_steps {display: flex;gap: 30px;}
 .steps_item {flex: 1 1 0;}
