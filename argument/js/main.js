@@ -75,13 +75,28 @@ footerMenuLinkList.forEach((link) => {
 });
 // ======================= footer_menu ==========================
 const accordionList = document.querySelectorAll('.accordion');
+
+function resetAccordItems() {
+  const accordionItem = document.querySelectorAll('.accordion_item');
+  accordionItem.forEach((item) => {
+    const accItemText = item.querySelector('.accordion_item_text');
+    item.classList.remove('active');
+    // accItemText.style.maxHeight = '';
+    accItemText.removeAttribute('style');
+  });
+}
+
 accordionList.forEach((acc) => {
   acc.addEventListener('click', (e) => {
     const accItem = e.target.closest('.accordion_item');
-    if(accItem) {
+    if(!accItem) return;
+    const isOpen = accItem.classList.contains('active');
+
+    resetAccordItems();
+
+    if(!isOpen) {
       // const accItemTitle = accItem.querySelector('.accordion_item_title');
       const accItemText  = accItem.querySelector('.accordion_item_text');
-
       accItem.classList.add('active');
       accItemText.style.maxHeight = accItemText.scrollHeight + 'px';
     }
