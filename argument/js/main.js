@@ -73,18 +73,31 @@ footerMenuLinkList.forEach((link) => {
     }
   });
 });
-// ======================= footer_menu ==========================
+// ========================= accordion ==========================
 const accordionList = document.querySelectorAll('.accordion');
 
 function resetAccordItems() {
   const accordionItem = document.querySelectorAll('.accordion_item');
-  accordionItem.forEach((item) => {
+  accordionItem.forEach(item => {
     const accItemText = item.querySelector('.accordion_item_text');
     item.classList.remove('active');
-    // accItemText.style.maxHeight = '';
     accItemText.removeAttribute('style');
   });
 }
+
+function setActiveAccordItem(elem) {
+  elem.classList.add('active');
+  const elemText = elem.querySelector('.accordion_item_text');
+  elemText.style.maxHeight = elemText.scrollHeight + 'px';
+}
+
+function initAccordItems() {
+  const accordionItem = document.querySelectorAll('.accordion_item');
+  accordionItem.forEach(item => {
+    if(item.classList.contains('active')) {setActiveAccordItem(item)}
+  });
+}
+initAccordItems();
 
 accordionList.forEach((acc) => {
   acc.addEventListener('click', (e) => {
@@ -95,10 +108,8 @@ accordionList.forEach((acc) => {
     resetAccordItems();
 
     if(!isOpen) {
-      // const accItemTitle = accItem.querySelector('.accordion_item_title');
       const accItemText  = accItem.querySelector('.accordion_item_text');
-      accItem.classList.add('active');
-      accItemText.style.maxHeight = accItemText.scrollHeight + 'px';
+      setActiveAccordItem(accItem);
     }
   });
 });
