@@ -16,15 +16,21 @@ const bunner_swiper = new Swiper('.bunner_swiper', {
 });
 // ======================== swiper_license =======================
 const license_slider = new Swiper('.license_slider', {
-  loop:true,
-  slidesPerView: 4,
-  slidesPerGrupe: 1,
-  spaceBetween: 30,
+  // loop:true,
+  slidesPerView: 2,
+  slidesPerGroup: 1,
+  spaceBetween: 10, 
+  scrollbar: {el: '.license_slider_pagination'},
+  breakpoints: {
+    610: {slidesPerView: 3,spaceBetween: 12},
+    750: {slidesPerView: 4,spaceBetween: 12,enabled: false},
+    1100: {slidesPerView: 4,spaceBetween: 30,enabled: false},
+  }
 });
 // ========================== fancybox ===========================
 const fancyMainParams = {
-    placeFocusBack: false,
-    Carousel: {Toolbar: {display: {left: [],middle: [],right: ['close']}}}
+  placeFocusBack: false,
+  Carousel: {Toolbar: {display: {left: [],middle: [],right: ['close']}}}
 }
 Fancybox.bind('[data-fancybox="gallery_license"]', fancyMainParams);
 // ============================ tubs =============================
