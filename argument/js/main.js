@@ -23,8 +23,8 @@ const license_slider = new Swiper('.license_slider', {
   scrollbar: {el: '.license_slider_pagination'},
   breakpoints: {
     610: {slidesPerView: 3,spaceBetween: 12},
-    750: {slidesPerView: 4,spaceBetween: 12,enabled: false},
-    1100: {slidesPerView: 4,spaceBetween: 30,enabled: false},
+    750: {slidesPerView: 4,spaceBetween: 12},
+    1100: {slidesPerView: 4,spaceBetween: 30},
   }
 });
 // ========================== fancybox ===========================
