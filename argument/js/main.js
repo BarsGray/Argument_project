@@ -14,7 +14,20 @@ const bunner_swiper = new Swiper('.bunner_swiper', {
     clickable: true,
   }
 });
-// ======================= tubs =======================
+// ======================== swiper_license =======================
+const license_slider = new Swiper('.license_slider', {
+  loop:true,
+  slidesPerView: 4,
+  slidesPerGrupe: 1,
+  spaceBetween: 30,
+});
+// ========================== fancybox ===========================
+const fancyMainParams = {
+    placeFocusBack: false,
+    Carousel: {Toolbar: {display: {left: [],middle: [],right: ['close']}}}
+}
+Fancybox.bind('[data-fancybox="gallery_license"]', fancyMainParams);
+// ============================ tubs =============================
 const tubs_row = document.querySelector('.services_tubs_row');
 
 if (tubs_row) {
@@ -84,13 +97,11 @@ function resetAccordItems() {
     accItemText.removeAttribute('style');
   });
 }
-
 function setActiveAccordItem(elem) {
   elem.classList.add('active');
   const elemText = elem.querySelector('.accordion_item_text');
   elemText.style.maxHeight = elemText.scrollHeight + 'px';
 }
-
 function initAccordItems() {
   const accordionItem = document.querySelectorAll('.accordion_item');
   accordionItem.forEach(item => {
