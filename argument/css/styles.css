@@ -594,6 +594,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .license_slider_pagination .swiper-scrollbar-drag {background-color: var(--akcent_color_hover);}
 .license_slider_pagination {width: 100%; height: 4px;background-color: #fff;position: absolute;bottom: 0;display: none;}
 
+.section_docs {margin: 80px 0 140px;}
 .docs_title {
   font-size: var(--title_size_main);
   color: var(--title_color_main);
@@ -646,11 +647,66 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   font-size: 16px;
 }
 .download_icon {width: 24px;height: 24px;background: url('../img/pdf.svg') center / cover no-repeat;}
+.section_rewiews {margin: 60px 0 140px;}
+.section_rewiews .template_info_b {margin-bottom: 60px;}
+.rewiews_title {
+  font-size: var(--title_size_main);
+  color: var(--title_color_main);
+  line-height: 1.2;
+}
+.rewiews_text {
+  font-size: var(--text_size_main_two);
+  line-height: 1.4;
+}
+.rewiews_box {
+  column-count: 3;
+  column-gap: 30px;
+}
+.rewiews_item {
+  break-inside: avoid;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+.rewiews_item_name {
+  color: var(--title_color_main);
+  font-size: 16px;
+  line-height: 1.4;
+  grid-column: 1/3;
+}
+.rewiews_item_text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #828282;
+  grid-column: 1/3;
+}
+.rewiews_item_rating {
+  display: flex;
+  align-items: center;
+  height: 22px;
+}
+.rewiews_item_rating {
+    width: 78px;
+    height: 14px;
+    background-color: #ff0000;
+}
+
+.rewiews_item_date {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  align-self: center;
+  justify-self: end;
+}
 
 .footer {background-color: #E5E5E5;margin-top: 200px;}
 .footer_top_inner .container {display: flex;justify-content: space-between;padding-top: var(--footer_padding_top); padding-bottom: 80px;gap: 30px;}
 .footer_main_btn {padding: 12px 99px; box-shadow: 0px 10px 40px 0px #FFA2A2CC;height: fit-content;width: 100%;}
-.footer_mid nav>ul {display: flex;gap: 126px;}
+.footer_mid nav>ul {display: flex;gap: 136px;}
 .footer_mid nav>ul li,.footer_mid nav>ul li ul {display: flex; flex-direction: column; gap: 20px;}
 .footer_mid nav>ul>li {gap: 12px;}
 .footer_mid nav>ul li a {font-size: var(--text_size_main_minus);color: #414141;line-height: 1.4;transition: color var(--transition_02s);}
@@ -689,10 +745,12 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .menu_btn {display: flex;}
   .search_form {width: 100%;min-width: unset;}
   .form_box form {min-width: 400px;}
-  .footer_main_btn {padding: 12px 50px;}
+  .footer_main_btn {padding: 12px 40px;}
   .qr_inner::before {width: 9.8%;height: 57px;position: absolute;top: 145px;left: 46%;}
   .qr_dec {width: 258px;}
   .qr_content {margin-right: 25.6%;}
+  .footer_right {max-width: 228px;}
+
 }
 @media (max-width: 1250px) {
   .bunner_slide {min-height: 320px;}
@@ -779,7 +837,9 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .template_info_b_left_box {flex: .9 1 381px;}
   .section_integration {margin: 80px 0 120px;}
   .section_license {margin: 40px 0 60px;}
+  .section_docs {margin: 60px 0 120px;}
   .docs_box {gap: 12px;grid-template-columns: repeat(2,1fr);}
+  .section_rewiews .template_info_b {margin-bottom: 40px;}
 }
 @media (max-width: 1000px) {
   :root {
@@ -790,7 +850,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   
   .form_box form {max-width: unset;}
   .footer_top_inner .container {flex-direction: column-reverse;position: relative;}
-  .footer_right {grid-template-columns: repeat(2, 1fr);row-gap: 60px;margin-bottom: 30px;}
+  .footer_right {grid-template-columns: repeat(2, 1fr);row-gap: 60px;margin-bottom: 30px;max-width: unset;}
   .footer_main_btn {grid-column: 2;padding: 12px 39px;margin-left: auto;width: fit-content;}
   .footer_left {position: absolute;top: var(--footer_padding_top);left: var(--container_padding);}
   .footer_mid nav>ul {flex-direction: column;gap: 30px;}
@@ -918,6 +978,8 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .section_license {margin: 30px 0 40px;}
   .license_slider {padding-bottom: 24px;}
   .license_slider_pagination {display: unset;}
+  .section_docs {margin: 40px 0 100px;}
+  .section_rewiews .template_info_b {margin-bottom: 30px;}
 }
 @media (max-width: 610px) {
   :root {
@@ -947,6 +1009,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .license_slider {margin-top: 30px;}
   .docs_title {margin-bottom: 10px;}
   .docs_box {grid-template-columns: 1fr;}
+  .docs_title {margin-bottom: 0;}
 }
 @media (max-width: 520px) {
   .header_main_btn {display: none;}
