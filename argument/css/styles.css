@@ -84,10 +84,10 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .template_info_a_right_box {flex: 1 1 810px;width: 100%;height: fit-content;}
 
 .template_info_b {display: flex;justify-content: space-between;gap: 30px;}
-.template_info_b_left_box {flex: .9 1 330px;width: 100%;height: fit-content;}
+.template_info_b_left_box {flex: .9 1 330px;width: 100%;height: fit-content;min-width: 330px;}
 .template_info_b_right_box {flex: 1 1 1050px;width: 100%;height: fit-content;}
 
-.feed_btn,.footer_main_btn,.header_main_btn {
+.rewiews_more_btn,.feed_btn,.footer_main_btn,.header_main_btn {
   white-space: nowrap;
   color: var(--akcent_color_hover);
   border: 2px solid var(--akcent_color_hover);
@@ -638,7 +638,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .section_rewiews .template_info_b {margin-bottom: 60px;}
 .rewiews_title {font-size: var(--title_size_main);color: var(--title_color_main);line-height: 1.2;}
 .rewiews_text {font-size: var(--text_size_main_two);line-height: 1.4;}
-.rewiews_box {column-count: 3;column-gap: 30px;}
+.rewiews_box {column-count: 3;column-gap: 30px;position: relative;padding-bottom: 80px;}
 .rewiews_item {
   break-inside: avoid;
   margin-bottom: 30px;
@@ -652,11 +652,38 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .rewiews_item_name {color: var(--title_color_main);font-size: 16px;line-height: 1.4;grid-column: 1/3;}
 .rewiews_item_text {font-size: 16px;line-height: 1.4;color: #828282;grid-column: 1/3;}
 .rewiews_item_rating {display: flex;align-items: center;height: 22px;}
-.rewiews_item_rating {display: flex;gap: 2px;}
-.rewiews_item_star {display: block;width: 14px;height: 14px;background: url('../img/star_def.svg') center / contain no-repeat;}
-.star_active_05 {background: url('../img/star_active_05.svg') center / contain no-repeat;}
-.star_active {background: url('../img/star_active.svg') center / contain no-repeat;}
+.rewiews_item_star {
+  display: block;
+  width: 16px;
+  height: 14px;
+  background-image: url('../img/star_def.svg');
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.star_active {background-image: url('../img/star_active.svg');}
+.star_active_05 {background-image: url('../img/star_active_05.svg');}
 .rewiews_item_date {display: flex;align-items: center;height: 22px;justify-self: end;}
+.rewiews_more_btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.section_recvezits {margin: 60px 0 140px;}
+.recvezits_title_box {margin-bottom: 64px;}
+.recvezits_title {font-size: var(--title_size_main);color: var(--title_color_main);line-height: 1.2;}
+.recvezits_text {font-size: var(--text_size_main);line-height: 1.4;}
+.recvezits_row {padding: 40px 0 40px;border-bottom: 1px solid #D5D5D5;}
+.recvezits_row:first-child {border-top: 1px solid #D5D5D5;}
+.recvezits_row:last-child {border-bottom: none;}
+.recvezits_row {border-bottom: 1px solid #D5D5D5;}
+.recvezits_row_data {display: flex;gap: 30px;margin-bottom: 30px;}
+.recvezits_row_data:last-child {margin-bottom: unset;}
+.recvezits_row_title {font-size: 32px;line-height: 1.4;color: var(--title_color_main);margin-bottom: 10px;}
+.recvezits_data_value,.recvezits_data_name {flex: 110;font-size: 18px;line-height: 1.4;}
+.recvezits_data_value {color: #5C5C5C;}
 
 .footer {background-color: #E5E5E5;margin-top: 200px;}
 .footer_top_inner .container {display: flex;justify-content: space-between;padding-top: var(--footer_padding_top); padding-bottom: 80px;gap: 30px;}
@@ -683,7 +710,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .services_item:hover {border-color: var(--akcent_color_hover);}
   .services_item:hover .services_btn {color: var(--akcent_color_hover);}
   .services_item:hover path {stroke: var(--akcent_color_hover);}
-  .feed_btn:hover,.footer_main_btn:hover,.header_main_btn:hover {border-color: #161616;background-color: #161616;color: #fff;}
+  .rewiews_more_btn:hover,.feed_btn:hover,.footer_main_btn:hover,.header_main_btn:hover {border-color: #161616;background-color: #161616;color: #fff;}
   .feed_num:hover {color: var(--akcent_color_hover);}
   .feed_num:hover svg path {stroke: var(--akcent_color_hover);}
   .footer_mid nav>ul li:not(.menu-item-has-children) a:hover {color: var(--akcent_color_hover);}
@@ -788,13 +815,19 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .accordion_text {font-size: 17px;}
   .template_info_a {gap: 92px;}
   .template_info_a_left_box {flex: .9 1 295px;}
-  .template_info_b {gap: 92px;}
-  .template_info_b_left_box {flex: .9 1 381px;}
+  /* .template_info_b {gap: 92px;} */
+  .template_info_b_left_box {flex: .9 1 485px; min-width: unset;}
   .section_integration {margin: 80px 0 120px;}
   .section_license {margin: 40px 0 60px;}
   .section_docs {margin: 60px 0 120px;}
   .docs_box {gap: 12px;grid-template-columns: repeat(2,1fr);}
+  .section_rewiews {margin: 40px 0 120px;}
   .section_rewiews .template_info_b {margin-bottom: 40px;}
+  .rewiews_box {column-count: 2; padding-bottom: 70px; gap: 12px;}
+  .rewiews_item {margin-bottom: 12px;}
+  .section_recvezits {margin: 40px 0 120px;}
+  .recvezits_title_box {margin-bottom: 40px;}
+  .recvezits_data_value,.recvezits_data_name {font-size: 17px;}
 }
 @media (max-width: 1000px) {
   :root {
@@ -934,7 +967,12 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .license_slider {padding-bottom: 24px;}
   .license_slider_pagination {display: unset;}
   .section_docs {margin: 40px 0 100px;}
+  .section_rewiews {margin: 30px 0 100px;}
   .section_rewiews .template_info_b {margin-bottom: 30px;}
+  .recvezits_data_value,.recvezits_data_name {font-size: 16px;}
+  .section_recvezits {margin: 30px 0 100px;}
+  .recvezits_title_box {margin-bottom: 30px;}
+  .recvezits_row {padding: 30px 0 0;}
 }
 @media (max-width: 610px) {
   :root {
@@ -965,6 +1003,12 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .docs_title {margin-bottom: 10px;}
   .docs_box {grid-template-columns: 1fr;}
   .docs_title {margin-bottom: 0;}
+  .rewiews_box {column-count: unset;}
+  .recvezits_row_title {margin-bottom: 0;}
+  .recvezits_row_data {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 @media (max-width: 520px) {
   .header_main_btn {display: none;}
