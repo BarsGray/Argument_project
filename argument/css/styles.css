@@ -685,6 +685,11 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .recvezits_data_value,.recvezits_data_name {flex: 110;font-size: 18px;line-height: 1.4;}
 .recvezits_data_value {color: #5C5C5C;}
 
+.performance_list {display: flex;justify-content: space-between;align-items: center;}
+.performance_list_num {font-size: var(--title_size_main);color: var(--title_color_main);margin-bottom: 20px;}
+.performance_list_desc {color: #4A4A4A;font-size: 16px;line-height: 1.4;max-width: 120px;}
+.performance_top_row {margin-bottom: 80px;}
+
 .footer {background-color: #E5E5E5;margin-top: 200px;}
 .footer_top_inner .container {display: flex;justify-content: space-between;padding-top: var(--footer_padding_top); padding-bottom: 80px;gap: 30px;}
 .footer_main_btn {padding: 12px 99px; box-shadow: 0px 10px 40px 0px #FFA2A2CC;height: fit-content;width: 100%;}
@@ -815,7 +820,6 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .accordion_text {font-size: 17px;}
   .template_info_a {gap: 92px;}
   .template_info_a_left_box {flex: .9 1 295px;}
-  /* .template_info_b {gap: 92px;} */
   .template_info_b_left_box {flex: .9 1 485px; min-width: unset;}
   .section_integration {margin: 80px 0 120px;}
   .section_license {margin: 40px 0 60px;}
@@ -828,6 +832,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .section_recvezits {margin: 40px 0 120px;}
   .recvezits_title_box {margin-bottom: 40px;}
   .recvezits_data_value,.recvezits_data_name {font-size: 17px;}
+  .recvezits_row_data {margin-bottom: 20px;}
 }
 @media (max-width: 1000px) {
   :root {
@@ -972,7 +977,8 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .recvezits_data_value,.recvezits_data_name {font-size: 16px;}
   .section_recvezits {margin: 30px 0 100px;}
   .recvezits_title_box {margin-bottom: 30px;}
-  .recvezits_row {padding: 30px 0 0;}
+  .recvezits_row {padding: 30px 0;}
+  .recvezits_row_data {margin-bottom: 12px;}
 }
 @media (max-width: 610px) {
   :root {
@@ -1005,10 +1011,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .docs_title {margin-bottom: 0;}
   .rewiews_box {column-count: unset;}
   .recvezits_row_title {margin-bottom: 0;}
-  .recvezits_row_data {
-    flex-direction: column;
-    gap: 4px;
-  }
+  .recvezits_row_data {flex-direction: column;gap: 4px;margin-bottom: 20px;}
 }
 @media (max-width: 520px) {
   .header_main_btn {display: none;}
