@@ -68,7 +68,7 @@ a{color:inherit;}
   --text_size_main_minus: 16px;
   --bunner_size_main: 64px;
   --title_size_main: 48px;
-  --title_color_main: #161616;
+  --title_color_main: #040303;
   --akcent_color_hover: #FF0000;
   --transition_02s: .2s ease-in-out;
   --transition_03s: .3s ease-in-out;
@@ -81,7 +81,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 
 .template_info_a {display: flex;justify-content: space-between;gap: 30px;}
 .template_info_a_left_box {flex: .9 .7 450px;width: 100%;height: fit-content;}
-.template_info_a_right_box {flex: 1 1 930px;width: 100%;height: fit-content;}
+.template_info_a_right_box {flex: 1 1 929px;width: 100%;height: fit-content;}
 
 .template_info_b {display: flex;justify-content: space-between;gap: 30px;}
 .template_info_b_left_box {flex: .9 1 330px;width: 100%;height: fit-content;min-width: 330px;}
