@@ -602,7 +602,6 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .license_slider_pagination {width: 100%; height: 4px;background-color: #fff;position: absolute;bottom: 0;display: none;}
 
 .section_docs {margin: 80px 0 140px;}
-.docs_title {font-size: var(--title_size_h2);color: var(--title_color_main);line-height: 1.2;}
 .docs_box {display: grid;grid-template-columns: repeat(2,1fr);gap: 30px;}
 .docs_item {
   border-radius: 30px;
@@ -642,10 +641,8 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   white-space: nowrap;
 }
 .download_icon {width: 24px;height: 24px;background: url('../img/pdf.svg') center / cover no-repeat;}
-.section_rewiews {margin: 60px 0 140px;}
-.rewiews_title {font-size: var(--title_size_h2);color: var(--title_color_main);line-height: 1.2;}
-.rewiews_text {font-size: var(--text_size_medium);line-height: 1.4;}
-.rewiews_box {column-count: 3;column-gap: 30px;position: relative;padding-bottom: 80px;margin-top: 80px;}
+.section_rewiews {margin: 80px 0 140px;}
+.rewiews_box {column-count: 3;column-gap: 30px;position: relative;padding-bottom: 80px;}
 .rewiews_item {
   break-inside: avoid;
   margin-bottom: 30px;
@@ -679,9 +676,6 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   margin: 0 auto;
 }
 .section_recvezits {margin: 60px 0 140px;}
-.recvezits_title_box {margin-bottom: 64px;}
-.recvezits_title {font-size: var(--title_size_h2);color: var(--title_color_main);line-height: 1.2;}
-.recvezits_text {font-size: var(--text_size_medium);line-height: 1.4;}
 .recvezits_row {padding: 40px 0 40px;border-bottom: 1px solid #D5D5D5;}
 .recvezits_row:first-child {border-top: 1px solid #D5D5D5;}
 .recvezits_row:last-child {border-bottom: none;}
@@ -693,11 +687,11 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .recvezits_data_value {color: #5C5C5C;}
 
 .section_performance {margin: 60px 0 100px;}
-.performance_title {font-size: var(--title_size_h2);color: var(--title_color_main);}
+.info_title {font-size: var(--title_size_h2);color: var(--title_color_main);line-height: 1.2;}
 .performance_list {display: flex;justify-content: space-between;align-items: center;}
 .performance_list_num {font-size: var(--title_size_h2);color: var(--title_color_main);margin-bottom: 12px;line-height: 1.2;}
 .performance_list_desc {color: #4A4A4A;font-size: var(--text_size_small);line-height: 1.4;max-width: 120px;}
-.performance_top_row {margin-bottom: 80px;}
+.section_info_box {margin: 60px 0 80px;}
 .performance_btn {
   display: block;
   font-size: 16px;
@@ -712,9 +706,9 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   box-shadow: 0px 10px 40px 0px #FFA2A2CC;
   transition: all var(--transition_03s);
 }
-.performance_top_text {font-size: var(--text_size_medium);line-height: 1.4;}
-.performance_top_text p {margin-bottom: 20px;}
-.performance_top_text p:last-child {margin-bottom: 0;}
+.info_content {font-size: var(--text_size_medium);line-height: 1.4;}
+.info_content p {margin-bottom: 20px;}
+.info_content p:last-child {margin-bottom: 0;}
 
 .section_founder {margin: 100px 0 120px;}
 .founder_photo {max-width: 330px;aspect-ratio: 1;width: 100%;object-fit: cover;border-radius: 40px;margin-bottom: 10px;}
@@ -745,7 +739,6 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   background-repeat: no-repeat;
 }
 .advantages_list {display: flex;gap: 30px;justify-content: space-between;}
-
 .advantages_item_title {font-size: var(--title_size_h3);line-height: 1.4;}
 .advantages_item_text {font-size: var(--text_size_large);color: #4A4A4A;line-height: 1.4;}
 
@@ -814,7 +807,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .qr_dec {width: 258px;}
   .qr_content {margin-right: 25.6%;}
   .footer_right {max-width: 228px;}
-
+  .header_menu_box nav {display: none;}
 }
 @media (max-width: 1250px) {
   .bunner_slide {min-height: 320px;}
@@ -899,17 +892,16 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .section_license {margin: 40px 0 60px;}
   .section_docs {margin: 60px 0 120px;}
   .docs_box {gap: 12px;grid-template-columns: repeat(2,1fr);}
-  .section_rewiews {margin: 40px 0 120px;}
-  .rewiews_box {column-count: 2; padding-bottom: 70px; gap: 12px;margin-top: 60px;}
+  .section_rewiews {margin: 60px 0 120px;}
+  .rewiews_box {column-count: 2; padding-bottom: 70px; gap: 12px;}
   .rewiews_item {margin-bottom: 12px;}
   .section_recvezits {margin: 40px 0 120px;}
-  .recvezits_title_box {margin-bottom: 40px;}
   .recvezits_row_data {margin-bottom: 20px;}
   .recvezits_row_title {font-size: 26px;}
   .accordion_title,.accordion_text {max-width: 228px;}
-  .docs_title {max-width: 228px;}
+  .info_title {max-width: 228px;}
   .performance_btn {padding: 12px 20px;}
-  .performance_top_row {margin-bottom: 60px;}
+  .section_info_box {margin: 40px 0 60px;}
   .founder_photo,.founder_name,.founder_level {max-width: 228px;}
   .section_performance {margin: 40px 0 80px;}
   .section_founder {margin: 80px 0 100px;}
@@ -988,12 +980,12 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .accordion_title {margin-bottom: 10px;}
   .accordion_title, .accordion_text {max-width: unset;}
   .template_info {flex-direction: column;gap: 20px;}
-  .performance_bottom_row {flex-direction: column-reverse;gap: 45px;}
+  .performance_inner {flex-direction: column-reverse;gap: 45px;}
   .accordion_item.active .accordion_item_title {margin-bottom: 10px;}
   .accordion_item + .accordion_item {margin-top: 20px;padding-top: 20px;}
   .template_info_left_box,.template_info_right_box {flex: unset;}
   .section_service_price .container {flex-direction: column;gap: 40px;}
-  .docs_title {max-width: unset;}
+  .info_title {max-width: unset;}
   .docs_box {margin-top: 17px;}
   .section_founder .template_info {gap: 33px;}
   .founder_info {
@@ -1069,14 +1061,12 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .license_slider {padding-bottom: 24px;}
   .license_slider_pagination {display: unset;}
   .section_docs {margin: 40px 0 100px;}
-  .section_rewiews {margin: 30px 0 100px;}
+  .section_rewiews {margin: 40px 0 100px;}
   .section_recvezits {margin: 30px 0 100px;}
-  .recvezits_title_box {margin-bottom: 30px;}
   .recvezits_row {padding: 30px 0;}
   .recvezits_row:last-child {padding-bottom: 0;}
   .recvezits_row_data {margin-bottom: 12px;}
-  .rewiews_box {margin-top: 30px;}
-  .performance_top_row {margin-bottom: 45px;}
+  .section_info_box {margin: 30px 0 40px;}
   .section_performance {margin: 30px 0 40px;}
   .section_founder {margin: 40px 0 100px;}
   .section_advantages {margin: 100px 0;}
@@ -1111,8 +1101,9 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
   .rewiews_box {column-count: unset;}
   .recvezits_row_title {font-size: 22px;margin-bottom: 0;}
   .recvezits_row_data {flex-direction: column;gap: 4px;margin-bottom: 20px;}
-  .performance_bottom_row {gap: 36px;}
-  .performance_top_row {margin-bottom: 36px;}
+  .performance_inner {gap: 36px;}
+  .section_info_box {margin-bottom: 30px;}
+  .section_rewiews {margin-top: 30px;}
   .founder_content .h2, .founder_content h2 {margin-bottom: 30px;}
   .advantages_list {flex-direction: column;gap: 30px;}
   .advantages_item {max-width: 440px;}
