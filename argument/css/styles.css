@@ -688,8 +688,8 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .recvezits_data_value,.recvezits_data_name {flex: 110;font-size: var(--text_size_medium);line-height: 1.4;}
 .recvezits_data_value {color: #5C5C5C;}
 
+.section_performance {margin: 60px 0 100px;}
 .performance_title {font-size: var(--title_size_main);color: var(--title_color_main);}
-
 .performance_list {display: flex;justify-content: space-between;align-items: center;}
 .performance_list_num {font-size: var(--title_size_main);color: var(--title_color_main);margin-bottom: 12px;line-height: 1.2;}
 .performance_list_desc {color: #4A4A4A;font-size: var(--text_size_small);line-height: 1.4;max-width: 120px;}
