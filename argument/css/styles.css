@@ -83,8 +83,8 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .template_info {display: flex;justify-content: space-between;gap: 30px;}
 .template_info_left_box {flex: .9 .7 450px;width: 100%;height: fit-content;}
 .template_info_right_box {flex: 1 1 929px;width: 100%;height: fit-content;}
-.template_info_right_box p {margin-bottom: 20px;}
-.template_info_right_box p:last-child {margin-bottom: 0;}
+.template_info_right_box ul,.template_info_right_box p {margin-bottom: 20px;}
+.template_info_right_box ul:last-child,.template_info_right_box p:last-child {margin-bottom: 0;}
 
 .rewiews_more_btn,.feed_btn,.footer_main_btn,.header_main_btn {
   white-space: nowrap;
@@ -713,6 +713,19 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;}
 .advantages_item_title {font-size: var(--title_size_h3);line-height: 1.4;}
 .advantages_item_text {font-size: var(--text_size_large);color: #4A4A4A;line-height: 1.4;}
 
+.vacancies_item {
+  border-radius: 20px;
+  padding: 40px;
+  background-color: #fff;
+}
+.vacancy_title {
+  font-size: var(--title_size_h3);
+  color: var(--title_color_main);
+}
+.vacancy_salary {
+  font-size: var(--text_size_large);
+  color: var(--title_color_main);
+}
 
 
 .footer {background-color: #E5E5E5;margin-top: 200px;}
