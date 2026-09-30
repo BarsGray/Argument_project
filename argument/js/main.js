@@ -1,3 +1,43 @@
+// ======================= header =============
+function scrollTop() {
+  let scroll_scr = window.scrollY;
+  if (scroll_scr > document.querySelector('.header_top_row').scrollHeight)
+    document.querySelector('.header').classList.add('scroll');
+  else
+    document.querySelector('.header').classList.remove('scroll');
+}
+scrollTop();
+window.addEventListener('scroll', scrollTop);
+// ======================= menu ==========================
+const menuButton = document.querySelector('.menu_btn');
+const svgMenuButton = document.querySelector('.menu_btn .ham');
+const headerMenu = document.querySelector('.header_menu_box');
+// const overlay = document.querySelector('.overlay');
+
+function openMenu() {
+  document.querySelector('body').classList.toggle('scroll-nane');
+
+  menuButton.classList.toggle('menu_btn--active');
+  svgMenuButton.classList.toggle('active');
+  headerMenu.classList.toggle('header_menu--active');
+
+  // overlay.classList.toggle('overlay--visible');
+}
+
+menuButton.addEventListener('click', (e) => {e.preventDefault(); openMenu();});
+// overlay.addEventListener('click', (e) => {e.preventDefault(); openMenu();});
+
+let isExecuted = false;
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1350) {
+    if (!isExecuted && headerMenu.classList.contains('header_menu--active')) {
+      openMenu();
+      isExecuted = true;
+    }
+  } else {
+    isExecuted = false;
+  }
+});
 // ======================= swiper_bunner ==========================
 const bunner_swiper = new Swiper('.bunner_swiper', {
   loop: true,
