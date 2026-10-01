@@ -12,7 +12,7 @@ window.addEventListener('scroll', scrollTop);
 const menuButton = document.querySelector('.menu_btn');
 const svgMenuButton = document.querySelector('.menu_btn .ham');
 const headerMenu = document.querySelector('.header_menu_box');
-// const overlay = document.querySelector('.overlay');
+const overlay = document.querySelector('.overlay');
 
 function openMenu() {
   document.querySelector('body').classList.toggle('scroll-nane');
@@ -21,11 +21,11 @@ function openMenu() {
   svgMenuButton.classList.toggle('active');
   headerMenu.classList.toggle('header_menu--active');
 
-  // overlay.classList.toggle('overlay--visible');
+  overlay.classList.toggle('overlay--visible');
 }
 
 menuButton.addEventListener('click', (e) => {e.preventDefault(); openMenu();});
-// overlay.addEventListener('click', (e) => {e.preventDefault(); openMenu();});
+overlay.addEventListener('click', (e) => {e.preventDefault(); openMenu();});
 
 let isExecuted = false;
 window.addEventListener('resize', () => {
