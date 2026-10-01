@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php the_title(); ?></title>
-  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/css/fancybox.css">
-  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/css/styles.css">
   <link rel="shortcut icon" href="<?php echo TEMPLATE_URL; ?>/img/favicon.ico" type="image/x-icon">
   <?php wp_head(); ?>
 </head>

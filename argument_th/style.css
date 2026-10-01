@@ -148,7 +148,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .header_menu_box li a:active {color: var(--akcent_color_hover);}
 .header_menu_box form.search_form {white-space: nowrap;}
 
-.section_bunner {margin: 44px 0 100px;}
+.section_bunner {margin: 14px 0 100px;}
 .section_bunner .container {position: relative;}
 .bunner_swiper {border-radius: 30px;}
 .bunner_content {display: flex;flex-direction: column;justify-content: space-between;max-width: 600px;}
@@ -892,7 +892,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
   .bunner_slide_text {margin-bottom: 20px;}
   .bunner_swiper {border-radius: 20px;}
   .bunner_slide {border-radius: 20px;}
-  .section_bunner {margin: 34px 0 80px;}
+  .section_bunner {margin: 14px 0 80px;}
   .accordion_title {margin-bottom: 20px;}
   .service_price_title {margin-bottom: 20px;}
   .service_price_right_box {padding: 20px;}
@@ -1005,7 +1005,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
   .section_license .dec_line {margin: 40px 0;}
   .section_license .dec_line {margin: 40px 0;}
   .header.scroll {top: 0;}
-  .section_bunner {margin: 30px 0 60px;}
+  .section_bunner {margin: 0 0 60px;}
   .search_form {display: none;}
   .header_top_row {display: none;}
   .bunner_slide_btn {font-size: 14px;}
