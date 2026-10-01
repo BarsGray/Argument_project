@@ -45,7 +45,7 @@
             <input type="search" name="s">
           </form>
           <a href="#" class="header_main_btn">Заказать звонок</a>
-          <a href="#" class="menu_btn"></a>
+          <a href="#" class="menu_btn"><?php echo SVG_MENU_BTN; ?></a>
         </div>
       </div>
     </div>
