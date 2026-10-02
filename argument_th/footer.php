@@ -5,6 +5,7 @@
           <a href="<?php echo FRONT_PAGE; ?>" class="logo"><img src="<?php echo TEMPLATE_URL; ?>/img/logo.svg" alt="Логотип"></a>
         </div>
         <div class="footer_mid">
+          <!-- <?php wp_nav_menu('menu=Меню в подвале&container=nav&container_class=menu') ?> -->
           <nav>
             <ul>
               <li class="menu-item-has-children">

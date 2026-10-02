@@ -147,6 +147,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .header_menu_box li a {color: #4E4E4E; transition: color var(--transition_02s);white-space: nowrap;font-weight: 500;}
 .header_menu_box li a:active {color: var(--akcent_color_hover);}
 .header_menu_box form.search_form {white-space: nowrap;}
+.header_menu_box .current-menu-item>a {color: var(--akcent_color_hover);}
 
 .section_bunner {margin: 14px 0 100px;}
 .section_bunner .container {position: relative;}

@@ -12,7 +12,7 @@
   <header class="header">
     <div class="header_top_row">
       <div class="container">
-        <p class="adress"><?php echo SVG_MAIL; ?>г. Воронеж, ул. Безоблачная, д. 8</p>
+        <p class="adress"><?php echo SVG_MAIL; ?><?php if($adress_main = get_field('adress_main')) echo $adress_main; ?></p>
         <div class="header_contacts">
           <a href="tel:+74732030911" class="header_tel"><?php echo SVG_PHONE; ?>+7 (473) 20-30-911</a>
           <a href="mailto:info@eosmedical.ru" class="header_mail"><?php echo SVG_PLACE; ?>info@eosmedical.ru</a>
@@ -24,17 +24,7 @@
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo"><img src="<?php echo TEMPLATE_URL; ?>/img/logo.svg" alt="Логотип"></a>
         <div class="header_menu_box">
           <div class="menu_row">
-            <nav>
-              <ul>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">О компании</a></li>
-                <li><a href="#">Лицензия</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Вакансии</a></li>
-                <li><a href="#">Реквизиты</a></li>
-                <li><a href="#">Контакты</a></li>
-              </ul>
-            </nav>
+            <?php wp_nav_menu('menu=Меню в шапке&container=nav&container_class=menu'); ?>
             <div class="mobile_menu_bottom_box">
               <a href="tel:+74732030911" class="header_tel"><?php echo SVG_PHONE; ?>+7 (473) 20-30-911</a>
               <a href="#" class="header_main_btn">Заказать звонок</a>
