@@ -35,49 +35,26 @@
     </div>
   </div>
   
-  <div class="section_services">
-    <div class="container">
-      <p class="services_title">Что мы предлагаем</p>
-      <div class="services_box">
-        <a href="#" class="services_item">
-          <span class="services_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/shield.png')"></span>
-          <p class="services_name">Физическая охрана</p>
-          <p class="services_text">Профессиональные охранники на вашем объекте. Охрана офисов, торговых центров и промышленных объектов.</p>
-          <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
-        </a>
-        <a href="#" class="services_item">
-          <span class="services_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/camers.png')"></span>
-          <p class="services_name">Монтажные работы</p>
-          <p class="services_text">Подключение к центральному пульту наблюдения. При срабатывании сигнализации группа выезжает немедленно</p>
-          <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
-        </a>
-        <a href="#" class="services_item">
-          <span class="services_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/monitor.png')"></span>
-          <p class="services_name">Пультовая охрана</p>
-          <p class="services_text">Проектирование и установка систем видеонаблюдения, контроля доступа, охранной и пожарной сигнализации.</p>
-          <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
-        </a>
-        <a href="#" class="services_item">
-          <span class="services_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/install.png')"></span>
-          <p class="services_name">Техническое обслуживание</p>
-          <p class="services_text">Регулярная диагностика, устранение неисправностей и замена элементов систем безопасности.</p>
-          <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
-        </a>
-        <a href="#" class="services_item">
-          <span class="services_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/cargo.png')"></span>
-          <p class="services_name">Сопровождение грузов</p>
-          <p class="services_text">Охрана и мониторинг перевозимых ценностей на всех этапах маршрута. Круглосуточная связь с водителем и экстренное реагирование.</p>
-          <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
-        </a>
-        <a href="#" class="services_item">
-          <span class="services_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/concert.png')"></span>
-          <p class="services_name">Охрана мероприятий</p>
-          <p class="services_text">Безопасность на концертах, выставках и спортсобытиях. Досмотр, контроль периметра и работа с большим объёмом людей.</p>
-          <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
-        </a>
+  <?php $query = new WP_Query(['post_type' => 'service', 'post_per_page' => -1]);
+  if ($query->have_posts()): ?>
+    <div class="section_services">
+      <div class="container">
+        <p class="services_title"><a href="<?php the_permalink(15) ?>">Что мы предлагаем</a></p>
+        <div class="services_box">
+          <?php while($query->have_posts()): $query->the_post();
+            $service_icon = get_field('service_icon')?: TEMPLATE_URL . '/img/shield.png' ;
+          ?>
+            <a href="<?php the_permalink(); ?>" class="services_item">
+              <span class="services_icon" style="background-image: url('<?php echo $service_icon; ?>')"></span>
+              <p class="services_name"><?php the_title(); ?></p>
+              <p class="services_text"><?php the_field('service_front_text'); ?></p>
+              <p class="services_btn">Подробнее<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.59961 3.60242L10.2902 7.29297C10.6807 7.68349 10.6807 8.31666 10.2902 8.70718L6.59961 12.3977" stroke="#7E7E7E" stroke-width="2"/></svg></p>
+            </a>
+          <?php endwhile; ?>
+        </div>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 
   <div class="sectiot_qr">
     <div class="container">

@@ -86,7 +86,11 @@ function register_service() {
 		'add_new' => 'Добавить',
 		'add_new_item' => 'Добавить',
 		'edit_item' => 'Редактировать',
-		'menu_name' => 'Услуги'
+		'menu_name' => 'Услуги',
+		// 'featured_image'        => 'Иконка услуги',
+    // 'set_featured_image'    => 'Установить иконку услуги',
+    // 'remove_featured_image' => 'Удалить иконку услуги',
+    // 'use_featured_image'    => 'Использовать как иконку услуги',
 	);
 
 	$post_args = array(

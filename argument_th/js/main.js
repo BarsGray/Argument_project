@@ -39,7 +39,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-const headerMenuLinkList = document.querySelectorAll('.header_menu_box .menu-item-has-children>a');
+const headerMenuLinkList = document.querySelectorAll('.header_menu_box nav>ul>li.menu-item-has-children>a');
 
 function headerResetSubMenu() {
   headerMenuLinkList.forEach((link) => {
@@ -133,7 +133,7 @@ if (marquee && label_elem ) {
   }
 }
 // ======================= footer_menu ==========================
-const footerMenuLinkList = document.querySelectorAll('.footer_mid nav>ul>li.menu-item-has-children a');
+const footerMenuLinkList = document.querySelectorAll('.footer_mid nav>ul>li.menu-item-has-children>a');
 
 function resetSubMenu() {
   footerMenuLinkList.forEach((link) => {

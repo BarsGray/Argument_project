@@ -199,7 +199,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .bunner_content {display: flex;flex-direction: column;justify-content: space-between;max-width: 600px;}
 .bunner_slide {position: relative;padding: 103px 90px;border-radius: 30px;min-height: 500px;overflow: hidden;}
 .bunner_slide_title {font-size: var(--title_size_h1);color: #fff;margin-bottom: 30px;}
-.bunner_slide_text {font-size: var(--text_size_small);line-height: 1.6;color: #fff;margin-bottom: 30px;}
+.bunner_slide_text {font-size: var(--text_size_small);line-height: 1.4;color: #fff;margin-bottom: 30px;}
 .bunner_slide_btn {
   display: block;
   font-size: 16px;
