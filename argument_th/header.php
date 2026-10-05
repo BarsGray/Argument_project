@@ -7,15 +7,26 @@
   <link rel="shortcut icon" href="<?php echo TEMPLATE_URL; ?>/img/favicon.ico" type="image/x-icon">
   <?php wp_head(); ?>
 </head>
+<?php
+  $adress_main = get_field('adress_main', 30);
+  $phone_main  = get_field('phone_main', 30);
+  $email_main  = get_field('email_main', 30);
+?>
 <body>
   <div class="overlay"></div>
   <header class="header">
     <div class="header_top_row">
       <div class="container">
-        <p class="adress"><?php echo SVG_MAIL; ?><?php if($adress_main = get_field('adress_main')) echo $adress_main; ?></p>
+        <?php if($adress_main): ?>
+          <p class="adress"><?php echo SVG_MAIL . $adress_main; ?></p>
+        <?php endif; ?>
         <div class="header_contacts">
-          <a href="tel:+74732030911" class="header_tel"><?php echo SVG_PHONE; ?>+7 (473) 20-30-911</a>
-          <a href="mailto:info@eosmedical.ru" class="header_mail"><?php echo SVG_PLACE; ?>info@eosmedical.ru</a>
+          <?php if($phone_main): ?>
+            <a href="tel:<?php echo merge_numbers($phone_main); ?>" class="header_tel"><?php echo SVG_PHONE . $phone_main; ?></a>
+          <?php endif; ?>
+          <?php if($email_main): ?>
+            <a href="mailto:<?php echo $email_main; ?>" class="header_mail"><?php echo SVG_PLACE . $email_main; ?></a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -26,7 +37,9 @@
           <div class="menu_row">
             <?php wp_nav_menu('menu=Меню в шапке&container=nav&container_class=menu'); ?>
             <div class="mobile_menu_bottom_box">
-              <a href="tel:+74732030911" class="header_tel"><?php echo SVG_PHONE; ?>+7 (473) 20-30-911</a>
+              <?php if($phone_main): ?>
+                <a href="tel:<?php echo merge_numbers($phone_main); ?>" class="header_tel"><?php echo SVG_PHONE . $phone_main; ?></a>
+              <?php endif; ?>
               <a href="#" class="header_main_btn">Заказать звонок</a>
             </div>
           </div>

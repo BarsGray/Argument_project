@@ -79,107 +79,33 @@ function breadcrumbs($sep = ' / ', $args = array(), $l10n = array()) {
 // 	}
 // }
 function merge_numbers($num) {return str_replace([' ', '-', '(', ')'],'',(string) ($num ?? ''));}
-// function register_product() {
-// 	$post_labels = array(
-// 		'name' => 'Продукция',
-// 		'singular_name' => 'Продукт',
-// 		'add_new' => 'Добавить',
-// 		'add_new_item' => 'Добавить продукт',
-// 		'edit_item' => 'Редактировать',
-// 		'menu_name' => 'Продукция'
-// 	);
+function register_service() {
+	$post_labels = array(
+		'name' => 'Услуги',
+		'singular_name' => 'Услуга',
+		'add_new' => 'Добавить',
+		'add_new_item' => 'Добавить',
+		'edit_item' => 'Редактировать',
+		'menu_name' => 'Услуги'
+	);
 
-// 	$post_args = array(
-// 		'labels' => $post_labels,
-// 		'public' => true,
-// 		'show_ui' => true,
-// 		'has_archive' => 'product',
-// 		'menu_position' => 5,
-// 		'menu_icon' => 'dashicons-clipboard',
-// 		'supports' => array('title', 'editor', 'thumbnail'),
-// 		'rewrite' => array('slug' => 'product'),
-// 		'show_in_rest' => true,
-// 		'capability_type' => 'post',
-// 		'taxonomies' => array('catalog'),
-// 	);
+	$post_args = array(
+		'labels' => $post_labels,
+		'public' => true,
+		'has_archive' => false,
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-list-view',
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'rewrite' => array('slug' => 'service'),
+		'show_in_rest' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type('service', $post_args);
+}
+add_action('init', 'register_service');
 
-// 	register_post_type('product', $post_args);
-// 	$tax_labels = array(
-// 		'name' => 'Категории',
-// 		'singular_name' => 'Категория',
-// 		'menu_name' => 'Категории',
-// 		'all_items' => 'Все категории',
-// 		'add_new_item' => 'Добавить новую категорию',
-// 		'edit_item' => 'Изменить категорию',
-// 	);
-
-// 	$tax_args = array(
-// 		'hierarchical' => true,
-// 		'labels' => $tax_labels,
-// 		'show_ui' => true,
-// 		'show_admin_column' => true,
-// 		'query_var' => true,
-// 		'rewrite' => array('slug' => 'catalog'),
-// 		'show_in_rest' => true,
-// 	);
-
-// 	register_taxonomy('catalog', array('product'), $tax_args);
-// }
-// add_action('init', 'register_product');
-// function register_service() {
-// 	$post_labels = array(
-// 		'name' => 'Услуги',
-// 		'singular_name' => 'Услуга',
-// 		'add_new' => 'Добавить',
-// 		'add_new_item' => 'Добавить',
-// 		'edit_item' => 'Редактировать',
-// 		'menu_name' => 'Услуги'
-// 	);
-
-// 	$post_args = array(
-// 		'labels' => $post_labels,
-// 		'public' => true,
-// 		'has_archive' => false,
-// 		'menu_position' => 5,
-// 		'menu_icon' => 'dashicons-list-view',
-// 		'supports' => array('title', 'editor', 'thumbnail'),
-// 		'rewrite' => array('slug' => 'service'),
-// 		'show_in_rest' => true,
-// 		'capability_type' => 'post',
-// 	);
-
-// 	register_post_type('service', $post_args);
-// }
-// add_action('init', 'register_service');
-// function register_oborudovanie() {
-// 	$post_labels = array(
-// 		'name' => 'Оборудование',
-// 		'singular_name' => 'Оборудование',
-// 		'add_new' => 'Добавить',
-// 		'add_new_item' => 'Добавить',
-// 		'edit_item' => 'Редактировать',
-// 		'menu_name' => 'Оборудование'
-// 	);
-
-// 	$post_args = array(
-// 		'labels' => $post_labels,
-// 		'public' => false,
-// 		'show_ui' => true,
-// 		'has_archive' => false,
-// 		'menu_position' => 6,
-// 		'menu_icon' => 'dashicons-hammer',
-// 		'supports' => array('title'),
-// 		'show_in_rest' => true,
-// 		'capability_type' => 'post',
-// 	);
-
-// 	register_post_type('oborudovanie', $post_args);
-// }
-// add_action('init', 'register_oborudovanie');
-
-// ====== Автоматическое добавление товаров, пр создании, в конкретную категорию ======
-// add_action('save_post_product', function ($post_id, $post, $update) {
-// 	if ($update) {return;}
-// 	$category_id = 4;
-// 	wp_set_post_terms($post_id,[$category_id],'catalog');
-// }, 10, 3);
+// // добавление класса current-menu-item для каталога, при нахождении категории
+// add_filter('nav_menu_css_class', function ($classes, $item) {
+//     if (is_tax('product_cat') && $item->ID == 123) { $classes[] = 'current-menu-item'; }
+//     return $classes;
+// }, 10, 2);

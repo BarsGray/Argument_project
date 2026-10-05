@@ -129,7 +129,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .header.scroll {top: -40px;box-shadow: 0px 20px 20px #00000014;}
 .header_top_row {padding: 8px 0 7px;border-bottom: 1px solid #D7D7D7;}
 .header_top_row .container {display: flex;justify-content: space-between;align-items: center;gap: 20px;}
-.header_contacts {display: flex;justify-content: space-between;align-items: center;gap: 20px;}
+.header_contacts {display: flex;justify-content: space-between;align-items: center;gap: 20px;margin-left: auto;}
 .header_top_row .adress {display: flex;gap: 4px;align-items: center;color: #353535;}
 .header_top_row a {display: flex;gap: 4px;align-items: center;transition: color var(--transition_02s);}
 .header_top_row a path {transition: stroke var(--transition_02s);}
