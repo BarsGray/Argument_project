@@ -23,7 +23,7 @@ function title_def_box() { ?>
   <div class="section_title_box">
     <div class="container">
       <div class="title_box_inner">
-        <p class="title"><?php show_title(); ?></p>
+        <p class="title"><?php if (is_singular('service')) echo 'Услуги'; else show_title(); ?></p>
       </div>
     </div>
   </div>
@@ -76,3 +76,21 @@ function show_license() {
     </div>
   </div>
 <?php endif; }
+function show_docs() {
+  if ($docs = get_field('docs')): ?>
+    <div class="section_docs">
+      <div class="container template_info">
+        <div class="template_info_left_box"><p class="info_title">Договорные документы и акты</p></div>
+        <div class="docs_box template_info_right_box">
+          <?php foreach($docs as $doc): ?>
+            <a href="<?php echo $doc['doc']['url']; ?>" class="docs_item" download>
+              <p class="doc_name"><?php echo $doc['doc_name']; ?></p>
+              <p class="doc_btn">Скачать<?php echo SVG_CHEVRON_DOC_DOWN; ?></p>
+              <p class="doc_size"><?php echo pathinfo($doc['doc']['filename'], PATHINFO_EXTENSION); ?>.<?php echo format_file_size($doc['doc']['filesize']); ?><span class="download_icon"></span></p>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  <?php endif;
+}
