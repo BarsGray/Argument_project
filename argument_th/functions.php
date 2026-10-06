@@ -28,3 +28,51 @@ function title_def_box() { ?>
     </div>
   </div>
 <?php }
+function show_form() { ?>
+  <div class="section_form">
+    <div class="container">
+      <div class="form_box">
+        <div class="action_box">
+          <p class="action_title">Получите коммерческое предложение</p>
+          <p class="action_text">Оставьте заявку — наш специалист свяжется с вами в ближайшее время, ответит на все вопросы и предложит оптимальное решение для вашей безопасности.</p>
+        </div>
+        <?php echo do_shortcode('[contact-form-7 id="08e9a27"]');?>
+      </div>
+    </div>
+  </div>
+<?php }
+function show_info() {
+  $info_box_title = get_field('info_box_title');
+  $info_box_text = get_field('info_box_text');
+  if($info_box_text || $info_box_title): ?>
+    <div class="section_info_box">
+      <div class="container">
+        <div class="info_box template_info">
+          <div class="info_title_wrap template_info_left_box">
+            <p class="info_title"><?php echo $info_box_title; ?></p>
+          </div>
+          <div class="info_content template_info_right_box">
+            <?php echo $info_box_text; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+<?php endif;
+}
+function show_license() {
+  $license = get_field('license');
+  if ($license): ?>
+  <div class="section_license">
+    <div class="container">
+      <div class="license_slider swiper">
+        <div class="license_slider_wrapper swiper-wrapper">
+          <?php foreach($license as $item): ?>
+            <div class="license_slider_item swiper-slide"><a href="<?php echo $item['url']; ?>" data-fancybox="gallery_license" class="license_slider_link"><img src="<?php echo $item['url']; ?>" alt="<?php echo $item['alt']; ?>"></a></div>
+          <?php endforeach; ?>
+        </div>
+        <div class="license_slider_pagination"></div>
+      </div>
+      <div class="dec_line"></div>
+    </div>
+  </div>
+<?php endif; }

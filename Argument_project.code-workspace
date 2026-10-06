@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../delica_project"
+		},
+		{
+			"path": "../bobonov/bobonov_project"
 		}
 	],
 	"settings": {}

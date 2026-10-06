@@ -39,10 +39,10 @@
   if ($query->have_posts()): ?>
     <div class="section_services">
       <div class="container">
-        <p class="services_title"><a href="<?php the_permalink(15) ?>">Что мы предлагаем</a></p>
+        <p class="services_title"><a class="services_title_link" href="<?php the_permalink(15) ?>">Что мы предлагаем<?php echo SVG_CHEVRON_TITLE_LINK; ?></a></p>
         <div class="services_box">
           <?php while($query->have_posts()): $query->the_post();
-            $service_icon = get_field('service_icon')?: TEMPLATE_URL . '/img/shield.png' ;
+            $service_icon = get_field('service_icon')?: TEMPLATE_URL . '/img/shield.png';
           ?>
             <a href="<?php the_permalink(); ?>" class="services_item">
               <span class="services_icon" style="background-image: url('<?php echo $service_icon; ?>')"></span>
@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-  <?php endif; ?>
+  <?php wp_reset_postdata(); endif; ?>
 
   <div class="sectiot_qr">
     <div class="container">
@@ -134,23 +134,7 @@
       </div>
     </div>
   </div>
-    
-  <div class="section_form">
-    <div class="container">
-      <div class="form_box">
-        <div class="action_box">
-          <p class="action_title">Получите коммерческое предложение</p>
-          <p class="action_text">Оставьте заявку — наш специалист свяжется с вами в ближайшее время, ответит на все вопросы и предложит оптимальное решение для вашей безопасности.</p>
-        </div>
-        <div class="wpcf7 js" id="wpcf7-f6-o1" lang="ru-RU" dir="ltr" data-wpcf7-id="6">
-          <form action="/o-kompanii/#wpcf7-f6-o1" method="post" class="wpcf7-form init" aria-label="Контактная форма" novalidate="novalidate" data-status="init">
-            <p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" autocomplete="name" aria-required="true" aria-invalid="false" placeholder="Имя" value="" type="text" name="your-name"></span></p>
-            <p><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" autocomplete="tel" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__" value="" type="tel" name="your-email"></span></p>
-            <p><span class="wpcf7-form-control-wrap" data-name="acceptance-999"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-999" value="1" aria-invalid="false"><span class="wpcf7-list-item-label">Нажимая на кнопку, вы даете <a href="/soglasie-na-obrabotku-personalnyh-dannyh/">согласие на обработку своих персональных данных</a> и соглашаетесь с <a href="/privacy-policy/">политикой конфиденциальности</a>.</span></label></span></span></span></p>
-            <p><button type="submit" disabled="">Отправить</button></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-<?php get_footer(); ?>
+
+<?php
+  show_form();
+  get_footer(); ?>

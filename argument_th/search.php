@@ -16,4 +16,6 @@
     <?php endif; ?>
   </div>
 </div>
-<?php get_footer(); ?>
+<?php
+show_form();
+get_footer(); ?>
