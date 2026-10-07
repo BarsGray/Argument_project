@@ -9,7 +9,7 @@ if($query->have_posts()): ?>
     <div class="container">
       <ul class="services_tubs_row">
         <?php while($query->have_posts()): $query->the_post(); ?>
-          <li class="services_tub_item"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+          <li class="services_tub_item"><a href="<?php the_permalink(); ?>"><?php the_title(); the_ID(); ?></a></li>
         <?php endwhile; ?>
       </ul>
     </div>
