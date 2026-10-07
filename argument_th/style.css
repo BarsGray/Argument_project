@@ -358,14 +358,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .service_price_title {font-size: var(--title_size_h2);color: var(--title_color_main);line-height: 1.2;margin-bottom: 30px;}
 .service_price_text {color: #4A4A4A;font-size: 18px;line-height: 1.4;}
 .section_services_tubs {margin: 40px 0;}
-.services_tubs_row {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  width: 100%;
-  margin: 0 auto;
-}
+.services_tubs_row {display: flex;gap: 20px;overflow-x: auto;scrollbar-width: none;width: 100%;margin: 0 auto;}
 .services_tubs_row::-webkit-scrollbar {display: none;}
 .services_tub_item a {
   display: block;
@@ -849,10 +842,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
   .header_menu_box .menu-item-has-children:hover>ul {visibility: visible;opacity: 1;}
 }
 @media (max-width: 1486px) {
-  .services_tubs_row {
-    margin: 0 calc(-1 * var(--container_padding));
-    width: unset;
-  }
+  .services_tubs_row {margin: 0 calc(-1 * var(--container_padding));width: unset;}
   .services_tub_item:first-child {margin-left: var(--container_padding);}
   .services_tub_item:last-child {margin-right: var(--container_padding);}
 }
