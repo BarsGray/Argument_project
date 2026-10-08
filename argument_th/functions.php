@@ -94,3 +94,92 @@ function show_docs() {
     </div>
   <?php endif;
 }
+function show_get_quote() { ?>
+  <div class="section_feed">
+    <div class="container">
+      <div class="feed_inner">
+        <div class="feed_left_box">
+          <p class="feed_title">Получите расчет стоимости охраны</p>
+          <p class="feed_text">Подберем оптимальный формат сопровождения, оценим уровень рисков и предложим решение, которое обеспечит безопасность вам и вашим близким.</p>
+        </div>
+        <div class="feed_right_box">
+          <a class="feed_btn" href="#">Заказать услугу</a>
+          <?php if ($phone_main  = get_field('phone_main', 30)): ?>
+            <a class="feed_num" href="tel:<?php echo merge_numbers($phone_main); ?>"><span class="feed_icon_phone"><?php echo SVG_PHONE_QUOTE; ?></span><?php echo $phone_main; ?></a>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php }
+function show_qr_box() { ?>
+  <div class="sectiot_qr">
+    <div class="container">
+      <div class="qr_inner">
+        <div class="qr_content">
+          <p class="qr_title">Управление охраной в одно касание</p>
+          <p class="qr_text">Управляйте системой безопасности удаленно: ставьте объекты под защиту, отслеживайте события, пополняйте счет и вызывайте тревожную группу — всё через мобильное приложение.</p>
+          <div class="qr_links">
+            <a href="#" class="qr" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/6a4202141.png');"></a>
+            <a href="#" class="app_stor"></a>
+            <a href="#" class="g_play"></a>
+          </div>
+        </div>
+        <div class="qr_dec"></div>
+      </div>
+    </div>
+  </div>
+<?php }
+function show_recvezits() { ?>
+  <div class="section_recvezits">
+    <div class="container">
+      <div class="recvezits_box">
+        <div class="recvezits_row template_info">
+          <p class="recvezits_row_title template_info_left_box">Основные данные организации</p>
+          <ul class="recvezits_data_list template_info_right_box">
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Полное наименование</span><span class="recvezits_data_value">ООО ЧОП «Аргумент»</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">ИНН</span><span class="recvezits_data_value">3664067890</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">КПП</span><span class="recvezits_data_value">366401001</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">ОГРН</span><span class="recvezits_data_value">1023601234567</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">ОКПО</span><span class="recvezits_data_value">12345678</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Дата регистрации</span><span class="recvezits_data_value">17 марта 2002 года</span></li>
+          </ul>
+        </div>
+        <div class="recvezits_row template_info">
+          <p class="recvezits_row_title template_info_left_box">Адрес</p>
+          <ul class="recvezits_data_list template_info_right_box">
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Юридический адрес</span><span class="recvezits_data_value">г. Воронеж, ул. Транспортная, д. 83А</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Фактический адрес</span><span class="recvezits_data_value">3664067890г. Воронеж, ул. Транспортная, д. 83А</span></li>
+          </ul>
+        </div>
+        <div class="recvezits_row template_info">
+          <p class="recvezits_row_title template_info_left_box">Банковские реквизиты</p>
+          <ul class="recvezits_data_list template_info_right_box">
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Наименование банка</span><span class="recvezits_data_value">АО «Альфа-Банк» г. Воронеж</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">БИК</span><span class="recvezits_data_value">042007853</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Корсчет</span><span class="recvezits_data_value">30101810500000000853</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Расчётный счёт</span><span class="recvezits_data_value">40702810900000001234</span></li>
+          </ul>
+        </div>
+        <?php if ($phones = get_field('phones')): ?>
+          <div class="recvezits_row template_info">
+            <p class="recvezits_row_title template_info_left_box">Контакты</p>
+            <ul class="recvezits_data_list template_info_right_box">
+              <?php foreach($phones as $item): ?>
+                <li class="recvezits_row_data"><span class="recvezits_data_name"><?php echo $item['otdel']; ?></span><span class="recvezits_data_value"><a href="<?php echo merge_numbers($item['number']); ?>"><?php echo $item['number']; ?></a></span></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+        <div class="recvezits_row template_info">
+          <p class="recvezits_row_title template_info_left_box">Электронная почта</p>
+          <ul class="recvezits_data_list template_info_right_box">
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Основоная</span><span class="recvezits_data_value">info@argumentvrn.ru</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Служба технической поддержки</span><span class="recvezits_data_value">servise@argumentvrn.ru</span></li>
+            <li class="recvezits_row_data"><span class="recvezits_data_name">Служба по подбору персонала</span><span class="recvezits_data_value">personal@argumentvrn.ru</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php }
