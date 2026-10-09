@@ -104,6 +104,31 @@ function register_service() {
 	register_post_type('service', $post_args);
 }
 add_action('init', 'register_service');
+function register_rewiews() {
+	$post_labels = array(
+		'name' => 'Отзывы',
+		'singular_name' => 'Отзыв',
+		'add_new' => 'Добавить',
+		'add_new_item' => 'Добавить',
+		'edit_item' => 'Редактировать',
+		'menu_name' => 'Отзывы',
+	);
+
+	$post_args = array(
+		'labels' => $post_labels,
+		'public' => false,
+		'show_ui' => true,
+		'has_archive' => false,
+		'menu_position' => 6,
+		'menu_icon' => 'dashicons-feedback',
+		'supports' => array('title', 'editor'),
+		'rewrite' => array('slug' => 'rewiews'),
+		'show_in_rest' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type('rewiews', $post_args);
+}
+add_action('init', 'register_rewiews');
 
 function format_file_size($bytes) {
 	if ($bytes >= 1024 * 1024)

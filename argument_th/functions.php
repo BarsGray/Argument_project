@@ -137,31 +137,59 @@ function show_recvezits() { ?>
         <div class="recvezits_row template_info">
           <p class="recvezits_row_title template_info_left_box">Основные данные организации</p>
           <ul class="recvezits_data_list template_info_right_box">
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Полное наименование</span><span class="recvezits_data_value">ООО ЧОП «Аргумент»</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">ИНН</span><span class="recvezits_data_value">3664067890</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">КПП</span><span class="recvezits_data_value">366401001</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">ОГРН</span><span class="recvezits_data_value">1023601234567</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">ОКПО</span><span class="recvezits_data_value">12345678</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Дата регистрации</span><span class="recvezits_data_value">17 марта 2002 года</span></li>
+            <?php if($company_name = get_field('company_name')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">Полное наименование</span><span class="recvezits_data_value"><?php echo $company_name; ?></span></li>
+            <?php endif; ?>
+            <?php if($date_registration = get_field('date_registration')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">ИНН</span><span class="recvezits_data_value"><?php echo $date_registration; ?></span></li>
+            <?php endif; ?>
+            <?php if($inn = get_field('inn')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">КПП</span><span class="recvezits_data_value"><?php echo $inn; ?></span></li>
+            <?php endif; ?>
+            <?php if($kpp = get_field('kpp')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">ОГРН</span><span class="recvezits_data_value"><?php echo $kpp; ?></span></li>
+            <?php endif; ?>
+            <?php if($ogrn = get_field('ogrn')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">ОКПО</span><span class="recvezits_data_value"><?php echo $ogrn; ?></span></li>
+            <?php endif; ?>
+            <?php if($okpo = get_field('okpo')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">Дата регистрации</span><span class="recvezits_data_value"><?php echo $okpo; ?></span></li>
+            <?php endif; ?>
           </ul>
         </div>
-        <div class="recvezits_row template_info">
-          <p class="recvezits_row_title template_info_left_box">Адрес</p>
-          <ul class="recvezits_data_list template_info_right_box">
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Юридический адрес</span><span class="recvezits_data_value">г. Воронеж, ул. Транспортная, д. 83А</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Фактический адрес</span><span class="recvezits_data_value">3664067890г. Воронеж, ул. Транспортная, д. 83А</span></li>
-          </ul>
-        </div>
+        <?php
+        $legal_address = get_field('legal_address');
+        $adress_main = get_field('adress_main', 30);
+
+        if($adress_main || $legal_address): ?>
+          <div class="recvezits_row template_info">
+            <p class="recvezits_row_title template_info_left_box">Адрес</p>
+            <ul class="recvezits_data_list template_info_right_box">
+              <li class="recvezits_row_data"><span class="recvezits_data_name">Юридический адрес</span><span class="recvezits_data_value"><?php echo $legal_address ?: $adress_main; ?></span></li>
+              <?php if($adress_main): ?>
+                <li class="recvezits_row_data"><span class="recvezits_data_name">Фактический адрес</span><span class="recvezits_data_value"><?php echo $adress_main; ?></span></li>
+              <?php endif; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
         <div class="recvezits_row template_info">
           <p class="recvezits_row_title template_info_left_box">Банковские реквизиты</p>
           <ul class="recvezits_data_list template_info_right_box">
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Наименование банка</span><span class="recvezits_data_value">АО «Альфа-Банк» г. Воронеж</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">БИК</span><span class="recvezits_data_value">042007853</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Корсчет</span><span class="recvezits_data_value">30101810500000000853</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Расчётный счёт</span><span class="recvezits_data_value">40702810900000001234</span></li>
+            <?php if($bank_name = get_field('bank_name')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">Наименование банка</span><span class="recvezits_data_value"><?php echo $bank_name; ?></span></li>
+            <?php endif; ?>
+            <?php if($bik = get_field('bik')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">БИК</span><span class="recvezits_data_value"><?php echo $bik; ?></span></li>
+            <?php endif; ?>
+            <?php if($corschet = get_field('corschet')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">Корсчет</span><span class="recvezits_data_value"><?php echo $corschet; ?></span></li>
+            <?php endif; ?>
+            <?php if($current_account = get_field('current_account')): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name">Расчётный счёт</span><span class="recvezits_data_value"><?php echo $current_account; ?></span></li>
+            <?php endif; ?>
           </ul>
         </div>
-        <?php if ($phones = get_field('phones')): ?>
+        <?php if ($phones = get_field('phones',30)): ?>
           <div class="recvezits_row template_info">
             <p class="recvezits_row_title template_info_left_box">Контакты</p>
             <ul class="recvezits_data_list template_info_right_box">
@@ -171,15 +199,39 @@ function show_recvezits() { ?>
             </ul>
           </div>
         <?php endif; ?>
+        <?php if ($mails = get_field('mails',30)): ?>
         <div class="recvezits_row template_info">
           <p class="recvezits_row_title template_info_left_box">Электронная почта</p>
           <ul class="recvezits_data_list template_info_right_box">
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Основоная</span><span class="recvezits_data_value">info@argumentvrn.ru</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Служба технической поддержки</span><span class="recvezits_data_value">servise@argumentvrn.ru</span></li>
-            <li class="recvezits_row_data"><span class="recvezits_data_name">Служба по подбору персонала</span><span class="recvezits_data_value">personal@argumentvrn.ru</span></li>
+            <?php foreach($mails as $item): ?>
+              <li class="recvezits_row_data"><span class="recvezits_data_name"><?php echo $item['otdel']; ?></span><span class="recvezits_data_value"><a href="mailto:<?php echo $item['email']; ?>"><?php echo $item['email']; ?></a></span></li>
+            <?php endforeach; ?>
           </ul>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
 <?php }
+function show_rewiews() { ?>
+  <?php
+  $query = new WP_Query(['post_type' => 'rewiews', 'posts_per_page' => -1]);
+  if($query->have_posts()): ?>
+    <div class="section_rewiews">
+      <div class="container rewiews_box">
+        <?php while($query->have_posts()): $query->the_post(); ?>
+        <?php $stars_count = get_field('ocenka'); ?>
+          <div class="rewiews_item">
+            <p class="rewiews_item_name"><?php the_title(); ?></p>
+            <div class="rewiews_item_text"><?php the_content(); ?></div>
+            <p class="rewiews_item_rating">
+              <?php for($i = 0; $i < 5; $i++): ?>
+                <span class="rewiews_item_star <?php if($i < $stars_count) echo 'star_active'; ?>"></span>
+              <?php endfor; ?>
+            </p>
+            <p class="rewiews_item_date"><?php echo get_the_date('d.m.Y'); ?></p>
+          </div>
+        <?php endwhile; ?>
+      </div>
+    </div>
+<?php endif; }

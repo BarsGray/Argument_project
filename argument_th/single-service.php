@@ -2,13 +2,14 @@
 get_header();
 title_def_box();
 
+$service_id = get_the_ID();
 $query = new WP_Query(['post_type' => 'service', 'post_per_page' => -1]);
 if($query->have_posts()): ?>
   <div class="section_services_tubs">
     <div class="container">
       <ul class="services_tubs_row">
         <?php while($query->have_posts()): $query->the_post(); ?>
-          <li class="services_tub_item"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+          <li class="services_tub_item <?php if(get_the_ID() === $service_id) echo 'active'; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
         <?php endwhile; ?>
       </ul>
     </div>

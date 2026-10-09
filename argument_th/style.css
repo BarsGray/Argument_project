@@ -373,6 +373,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
   transition: all var(--transition_02s);
   color: #666666;
 }
+.services_tub_item.active a {background-color: #fff;border-color: var(--akcent_color_hover);color: var(--akcent_color_hover);}
 .section_feed {margin: 100px 0 140px;}
 .feed_inner {
   display: flex;
@@ -720,7 +721,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 }
 .download_icon {width: 24px;height: 24px;background: url('img/pdf.svg') center / cover no-repeat;}
 .section_rewiews {margin: 80px 0 140px;}
-.rewiews_box {column-count: 3;column-gap: 30px;position: relative;padding-bottom: 80px;}
+.rewiews_box {column-count: 3;column-gap: 30px;position: relative;}
 .rewiews_item {
   break-inside: avoid;
   margin-bottom: 30px;
@@ -757,6 +758,8 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .recvezits_row_title {font-size: 32px;line-height: 1.4;color: var(--title_color_main);margin-bottom: 10px;}
 .recvezits_data_value,.recvezits_data_name {flex: 110;font-size: var(--text_size_medium);line-height: 1.4;}
 .recvezits_data_value {color: #5C5C5C;}
+.recvezits_data_value a {transition: color var(--transition_02s);}
+.recvezits_data_value a:hover {color: var(--akcent_color_hover);}
 
 .section_performance {margin: 60px 0 100px;}
 .info_title {font-size: var(--title_size_h2);color: var(--title_color_main);line-height: 1.2;max-width: 400px;}
