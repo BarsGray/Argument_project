@@ -235,3 +235,79 @@ function show_rewiews() { ?>
       </div>
     </div>
 <?php endif; }
+function show_vacancies() { ?>
+  <div class="section_vacancies">
+    <div class="container">
+      <div class="vacancies_box template_info">
+        <div class="vacancies_title_wrap template_info_left_box">
+          <p class="vacancies_title">Открытые вакансии</p>
+        </div>
+        <div class="vacancies_items_box template_info_right_box">
+          <div class="vacancies_item">
+            <p class="vacancy_title">Охранник 6-го разряда (вооружённый)</p>
+            <p class="vacancy_salary">от 60 000 ₽/мес</p>
+            <ul class="vacancy_data_list">
+              <li class="vacancy_location">Воронеж</li>
+              <li class="vacancy_time">12 - часовые смены</li>
+              <li class="vacancy_days">График 3/3</li>
+            </ul>
+            <div class="vacancy_desc">
+              <p>Охрана объектов повышенной опасности — это работа на сложных и ответственных объектах: банки, склады с дорогим оборудованием, торговые центры, производственные предприятия. В обязанности входит несение вооружённого дежурства, контроль пропускного режима, патрулирование территории, оперативное реагирование на любые угрозы и нештатные ситуации.</p>
+              <p>Охранник должен быть готов действовать быстро и слаженно, в том числе при возникновении критических ситуаций, связанных с попытками проникновения, хищения или нарушения общественного порядка.</p>
+            </div>
+            <ul class="vacancy_requir_list">
+              <li class="vacancy_requir_head">Требования:</li>
+              <li class="vacancy_requir">Наличие удостоверения охранника 4-го разряда</li>
+              <li class="vacancy_requir">Отличная физическая подготовка</li>
+              <li class="vacancy_requir">Отсутствие судимости</li>
+              <li class="vacancy_requir">Опыт работы от 1 года приветствуется</li>
+            </ul>
+            <a href="#" class="vacancies_btn">Откликнуться</a>
+          </div>
+          <div class="vacancies_item">
+            <p class="vacancy_title">Охранник 6-го разряда (вооружённый)</p>
+            <p class="vacancy_salary">от 60 000 ₽/мес</p>
+            <ul class="vacancy_data_list">
+              <li class="vacancy_location">Воронеж</li>
+              <li class="vacancy_time">12 - часовые смены</li>
+              <li class="vacancy_days">График 3/3</li>
+            </ul>
+            <div class="vacancy_desc">
+              <p>Охрана объектов повышенной опасности — это работа на сложных и ответственных объектах: банки, склады с дорогим оборудованием, торговые центры, производственные предприятия. В обязанности входит несение вооружённого дежурства, контроль пропускного режима, патрулирование территории, оперативное реагирование на любые угрозы и нештатные ситуации.</p>
+              <p>Охранник должен быть готов действовать быстро и слаженно, в том числе при возникновении критических ситуаций, связанных с попытками проникновения, хищения или нарушения общественного порядка.</p>
+            </div>
+            <ul class="vacancy_requir_list">
+              <li class="vacancy_requir_head">Требования:</li>
+              <li class="vacancy_requir">Наличие удостоверения охранника 4-го разряда</li>
+              <li class="vacancy_requir">Отличная физическая подготовка</li>
+              <li class="vacancy_requir">Отсутствие судимости</li>
+              <li class="vacancy_requir">Опыт работы от 1 года приветствуется</li>
+            </ul>
+            <a href="#" class="vacancies_btn">Откликнуться</a>
+          </div>
+          <div class="vacancies_item">
+            <p class="vacancy_title">Охранник 6-го разряда (вооружённый)</p>
+            <p class="vacancy_salary">от 60 000 ₽/мес</p>
+            <ul class="vacancy_data_list">
+              <li class="vacancy_location">Воронеж</li>
+              <li class="vacancy_time">12 - часовые смены</li>
+              <li class="vacancy_days">График 3/3</li>
+            </ul>
+            <div class="vacancy_desc">
+              <p>Охрана объектов повышенной опасности — это работа на сложных и ответственных объектах: банки, склады с дорогим оборудованием, торговые центры, производственные предприятия. В обязанности входит несение вооружённого дежурства, контроль пропускного режима, патрулирование территории, оперативное реагирование на любые угрозы и нештатные ситуации.</p>
+              <p>Охранник должен быть готов действовать быстро и слаженно, в том числе при возникновении критических ситуаций, связанных с попытками проникновения, хищения или нарушения общественного порядка.</p>
+            </div>
+            <ul class="vacancy_requir_list">
+              <li class="vacancy_requir_head">Требования:</li>
+              <li class="vacancy_requir">Наличие удостоверения охранника 4-го разряда</li>
+              <li class="vacancy_requir">Отличная физическая подготовка</li>
+              <li class="vacancy_requir">Отсутствие судимости</li>
+              <li class="vacancy_requir">Опыт работы от 1 года приветствуется</li>
+            </ul>
+            <a href="#" class="vacancies_btn">Откликнуться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php }
