@@ -129,6 +129,31 @@ function register_rewiews() {
 	register_post_type('rewiews', $post_args);
 }
 add_action('init', 'register_rewiews');
+function register_vacancies() {
+	$post_labels = array(
+		'name' => 'Вакансии',
+		'singular_name' => 'Вакансия',
+		'add_new' => 'Добавить',
+		'add_new_item' => 'Добавить',
+		'edit_item' => 'Редактировать',
+		'menu_name' => 'Вакансии',
+	);
+
+	$post_args = array(
+		'labels' => $post_labels,
+		'public' => false,
+		'show_ui' => true,
+		'has_archive' => false,
+		'menu_position' => 6,
+		'menu_icon' => 'dashicons-id-alt',
+		'supports' => array('title', 'editor'),
+		'rewrite' => array('slug' => 'vacancies'),
+		'show_in_rest' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type('vacancies', $post_args);
+}
+add_action('init', 'register_vacancies');
 
 function format_file_size($bytes) {
 	if ($bytes >= 1024 * 1024)

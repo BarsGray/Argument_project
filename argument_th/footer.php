@@ -17,7 +17,6 @@
             <div class="footer_contact_elem">
               <p class="footer_contact_label">Адрес</p>
               <p class="footer_contact"><?php echo $adress_main; ?></p>
-              <p class="footer_contact"><?php the_field('adress_main'); ?></p>
             </div>
           <?php endif; ?>
           <?php if($phone_main): ?>

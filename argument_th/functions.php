@@ -234,80 +234,103 @@ function show_rewiews() { ?>
         <?php endwhile; ?>
       </div>
     </div>
-<?php endif; }
-function show_vacancies() { ?>
-  <div class="section_vacancies">
-    <div class="container">
-      <div class="vacancies_box template_info">
-        <div class="vacancies_title_wrap template_info_left_box">
-          <p class="vacancies_title">Открытые вакансии</p>
-        </div>
-        <div class="vacancies_items_box template_info_right_box">
-          <div class="vacancies_item">
-            <p class="vacancy_title">Охранник 6-го разряда (вооружённый)</p>
-            <p class="vacancy_salary">от 60 000 ₽/мес</p>
-            <ul class="vacancy_data_list">
-              <li class="vacancy_location">Воронеж</li>
-              <li class="vacancy_time">12 - часовые смены</li>
-              <li class="vacancy_days">График 3/3</li>
-            </ul>
-            <div class="vacancy_desc">
-              <p>Охрана объектов повышенной опасности — это работа на сложных и ответственных объектах: банки, склады с дорогим оборудованием, торговые центры, производственные предприятия. В обязанности входит несение вооружённого дежурства, контроль пропускного режима, патрулирование территории, оперативное реагирование на любые угрозы и нештатные ситуации.</p>
-              <p>Охранник должен быть готов действовать быстро и слаженно, в том числе при возникновении критических ситуаций, связанных с попытками проникновения, хищения или нарушения общественного порядка.</p>
-            </div>
-            <ul class="vacancy_requir_list">
-              <li class="vacancy_requir_head">Требования:</li>
-              <li class="vacancy_requir">Наличие удостоверения охранника 4-го разряда</li>
-              <li class="vacancy_requir">Отличная физическая подготовка</li>
-              <li class="vacancy_requir">Отсутствие судимости</li>
-              <li class="vacancy_requir">Опыт работы от 1 года приветствуется</li>
-            </ul>
-            <a href="#" class="vacancies_btn">Откликнуться</a>
+<?php wp_reset_postdata(); endif; }
+function show_vacancies() {
+  $query = new WP_Query(['post_type' => 'vacancies', 'posts_per_page' => -1]);
+  if ($query->have_posts()): ?>
+    <div class="section_vacancies">
+      <div class="container">
+        <div class="vacancies_box template_info">
+          <div class="vacancies_title_wrap template_info_left_box">
+            <p class="vacancies_title">Открытые вакансии</p>
           </div>
-          <div class="vacancies_item">
-            <p class="vacancy_title">Охранник 6-го разряда (вооружённый)</p>
-            <p class="vacancy_salary">от 60 000 ₽/мес</p>
-            <ul class="vacancy_data_list">
-              <li class="vacancy_location">Воронеж</li>
-              <li class="vacancy_time">12 - часовые смены</li>
-              <li class="vacancy_days">График 3/3</li>
-            </ul>
-            <div class="vacancy_desc">
-              <p>Охрана объектов повышенной опасности — это работа на сложных и ответственных объектах: банки, склады с дорогим оборудованием, торговые центры, производственные предприятия. В обязанности входит несение вооружённого дежурства, контроль пропускного режима, патрулирование территории, оперативное реагирование на любые угрозы и нештатные ситуации.</p>
-              <p>Охранник должен быть готов действовать быстро и слаженно, в том числе при возникновении критических ситуаций, связанных с попытками проникновения, хищения или нарушения общественного порядка.</p>
-            </div>
-            <ul class="vacancy_requir_list">
-              <li class="vacancy_requir_head">Требования:</li>
-              <li class="vacancy_requir">Наличие удостоверения охранника 4-го разряда</li>
-              <li class="vacancy_requir">Отличная физическая подготовка</li>
-              <li class="vacancy_requir">Отсутствие судимости</li>
-              <li class="vacancy_requir">Опыт работы от 1 года приветствуется</li>
-            </ul>
-            <a href="#" class="vacancies_btn">Откликнуться</a>
-          </div>
-          <div class="vacancies_item">
-            <p class="vacancy_title">Охранник 6-го разряда (вооружённый)</p>
-            <p class="vacancy_salary">от 60 000 ₽/мес</p>
-            <ul class="vacancy_data_list">
-              <li class="vacancy_location">Воронеж</li>
-              <li class="vacancy_time">12 - часовые смены</li>
-              <li class="vacancy_days">График 3/3</li>
-            </ul>
-            <div class="vacancy_desc">
-              <p>Охрана объектов повышенной опасности — это работа на сложных и ответственных объектах: банки, склады с дорогим оборудованием, торговые центры, производственные предприятия. В обязанности входит несение вооружённого дежурства, контроль пропускного режима, патрулирование территории, оперативное реагирование на любые угрозы и нештатные ситуации.</p>
-              <p>Охранник должен быть готов действовать быстро и слаженно, в том числе при возникновении критических ситуаций, связанных с попытками проникновения, хищения или нарушения общественного порядка.</p>
-            </div>
-            <ul class="vacancy_requir_list">
-              <li class="vacancy_requir_head">Требования:</li>
-              <li class="vacancy_requir">Наличие удостоверения охранника 4-го разряда</li>
-              <li class="vacancy_requir">Отличная физическая подготовка</li>
-              <li class="vacancy_requir">Отсутствие судимости</li>
-              <li class="vacancy_requir">Опыт работы от 1 года приветствуется</li>
-            </ul>
-            <a href="#" class="vacancies_btn">Откликнуться</a>
+
+          <div class="vacancies_items_box template_info_right_box">
+            <?php while($query->have_posts()): $query->the_post(); ?>
+              <div class="vacancies_item">
+                <p class="vacancy_title"><?php the_title(); ?></p>
+                <?php if($salary = get_field('salary')): ?>
+                  <p class="vacancy_salary"><?php echo $salary; ?></p>
+                <?php endif; ?>
+                <?php
+                $vacancy_location = get_field('vacancy_location');
+                $vacancy_time = get_field('vacancy_time');
+                $vacancy_days = get_field('vacancy_days');
+                if($vacancy_location || $vacancy_time || $vacancy_days): ?>
+                  <ul class="vacancy_data_list">
+                    <?php if($vacancy_location): ?><li class="vacancy_location"><?php echo $vacancy_location ;?></li><?php endif; ?>
+                    <?php if($vacancy_time): ?><li class="vacancy_time"><?php echo $vacancy_time ;?></li><?php endif; ?>
+                    <?php if($vacancy_days): ?><li class="vacancy_days"><?php echo $vacancy_days ;?></li><?php endif; ?>
+                  </ul>
+                <?php endif; ?>
+                <div class="vacancy_desc">
+                  <?php the_content(); ?>
+                </div>
+                <?php if($requir_head = get_field('requir_head')): ?>
+                  <ul class="vacancy_requir_list">
+                    <li class="vacancy_requir_head">Требования:</li>
+                    <?php foreach($requir_head as $item): ?>
+                      <li class="vacancy_requir"><?php echo $item['requir']; ?></li>
+                    <?php endforeach; ?>
+                  </ul>
+                <?php endif; ?>
+                <a href="#" class="vacancies_btn">Откликнуться</a>
+              </div>
+            <?php endwhile; ?>
           </div>
         </div>
       </div>
     </div>
+  <?php wp_reset_postdata(); endif; ?>
+<?php }
+function show_contacts() { ?>
+  <div class="section_contacts">
+    <div class="container">
+      <div class="contacts_adress">
+        <?php if($adress_main = get_field('adress_main')): ?>
+          <p class="title">Адрес</p>
+          <p class="value"><?php echo ((get_field('pochta_index'))?:'').', '.$adress_main; ?></p>
+        <?php endif; ?>
+      </div>
+      <div class="contacts_socials">
+        <?php
+        $vk = get_field('vk');
+        $ok = get_field('ok');
+
+        if($vk || $ok): ?>
+          <p class="title">Социальные сети</p>
+          <p class="socials">
+            <?php if($vk): ?><a class="vk" href="<?php echo $vk; ?>"></a><?php endif; ?>
+            <?php if($ok): ?><a class="ok" href="<?php echo $ok; ?>"></a><?php endif; ?>
+          </p>
+        <?php endif; ?>
+      </div>
+      <div class="contacts_phones">
+        <?php if($phones = get_field('phones')): ?>
+          <p class="title">Телефоны</p>
+          <?php foreach($phones as $item): ?>
+            <p class="phone"><span><?php echo $item['otdel'] ?></span><a href="tel:<?php echo merge_numbers($item['number']); ?>"><?php echo $item['number']; ?></a></p>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+      <div class="contacts_mails">
+        <?php if($mails = get_field('mails')): ?>
+          <p class="title">Электронная почта</p>
+          <?php foreach($mails as $item): ?>
+            <p class="mail"><span><?php echo $item['otdel']; ?></span><a href="mailto:<?php echo $item['email']; ?>"><?php echo $item['email']; ?></a></p>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+    </div>
   </div>
+<?php }
+function show_map() { ?>
+  <?php if($map = get_field('map')): ?>
+    <div class="section_map">
+      <div class="container">
+        <?php echo $map; ?>
+        <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A83cf8d7425626ec21bd08adbe5ac0ff273577070af46c183a6ef0f726175b185&amp;width=1280&amp;height=503&amp;lang=ru_RU&amp;scroll=true"></script> -->
+      </div>
+    </div>
+  <?php endif; ?>
 <?php }
