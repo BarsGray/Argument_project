@@ -25,7 +25,7 @@
               <p class="result_type">
                 <?php
                   if(get_post_type() === 'service')
-                    echo '<a href="'.get_permalink(15).'">Охрана</a>';
+                    echo '<a href="'.get_permalink(15).'">'.get_post_type_object(get_post_type())->labels->name.'</a>';
                   else
                     echo '<a href="'.get_category_link(get_the_category()[0]->term_id).'">'.get_the_category()[0]->name.'</a>';
                 ?>

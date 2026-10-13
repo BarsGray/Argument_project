@@ -936,12 +936,15 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .contacts_socials a.vk {background-image: url('img/vk.svg');}
 .contacts_socials a.ok {background-image: url('img/ok.svg');}
 
-.results_box_inner {background-color: #fff;padding: 20px;border-radius: 30px;}
+.search_results_box {margin-top: 10px;}
+.results_box_inner {background-color: #fff;padding: 40px;border-radius: 30px;}
 .count_results {font-size: var(--title_size_h3);color: var(--title_color_main);margin-bottom: 40px;}
 .result_item + .result_item {margin-top: 40px;padding-top: 40px;border-top: 1px solid #D5D5D5;}
 .result_item_title {margin-bottom: 20px;font-size: var(--text_size_large);line-height: 1.4;}
 .result_item_text {font-size: var(--text_size_small);color: #262626;line-height: 1.4;}
 .result_type {margin-top: 20px;display: flex;gap: 20px;font-size: var(--text_size_small);color: #4A4A4A;}
+.results_box_inner a {transition: color var(--transition_02s);}
+.results_box_inner a:hover {color: var(--akcent_color_hover);}
 
 .section_map {margin: 80px 0 140px;}
 .section_map iframe {border-radius: 20px;overflow: hidden;width: 100%;max-height: 420px;}
@@ -1140,6 +1143,7 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
   .vacancies_items_box {gap: 30px;}
   .section_map {margin: 60px 0 120px;}
   .section_map iframe {max-height: 300px;}
+  .results_box_inner {padding: 20px;}
 }
 @media (max-width: 1000px) {
   :root {
