@@ -1,32 +1,19 @@
 <?php /* Template Name: Главная */ get_header(); ?>
+  <?php $slaider = get_field('slaider'); ?>
   <div class="section_bunner">
     <div class="container">
       <div class="bunner_swiper swiper">
         <div class="bunner_swiper_row swiper-wrapper">
-          <div class="bunner_slide swiper-slide">
-            <div class="bunner_content">
-              <p class="bunner_slide_title">Охрана которой доверяют</p>
-              <p class="bunner_slide_text">Частное охранное предприятие «Аргумент» — физическая защита, дистанционный мониторинг и монтаж систем безопасности в Воронеже, Курске, Белгороде и Тамбове. Профессионально и конфиденциально.</p>
-              <a href="#" class="bunner_slide_btn">Получить консультацию</a>
+          <?php foreach($slaider as $slide): ?>
+            <div class="bunner_slide swiper-slide">
+              <div class="bunner_content">
+                <p class="bunner_slide_title"><?php echo $slide['slider_title']; ?></p>
+                <p class="bunner_slide_text"><?php echo $slide['slider_text']; ?></p>
+                <a href="#" class="bunner_slide_btn">Получить консультацию</a>
+              </div>
+              <div class="bunner_img" style="background-image: url('<?php echo $slide['slider_image']; ?>"></div>
             </div>
-            <div class="bunner_img" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/bg.jpg');"></div>
-          </div>
-          <div class="bunner_slide swiper-slide">
-            <div class="bunner_content">
-              <p class="bunner_slide_title">Охрана которой доверяют</p>
-              <p class="bunner_slide_text">Частное охранное предприятие «Аргумент» — физическая защита, дистанционный мониторинг и монтаж систем безопасности в Воронеже, Курске, Белгороде и Тамбове. Профессионально и конфиденциально.</p>
-              <a href="#" class="bunner_slide_btn">Получить консультацию</a>
-            </div>
-            <div class="bunner_img" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/bg.jpg');"></div>
-          </div>
-          <div class="bunner_slide swiper-slide">
-            <div class="bunner_content">
-              <p class="bunner_slide_title">Охрана которой доверяют</p>
-              <p class="bunner_slide_text">Частное охранное предприятие «Аргумент» — физическая защита, дистанционный мониторинг и монтаж систем безопасности в Воронеже, Курске, Белгороде и Тамбове. Профессионально и конфиденциально.</p>
-              <a href="#" class="bunner_slide_btn">Получить консультацию</a>
-            </div>
-            <div class="bunner_img" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/bg.jpg');"></div>
-          </div>
+          <?php endforeach; ?>
         </div>
         <div class="bunner_pagination"></div>
       </div>
