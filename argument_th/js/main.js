@@ -9,6 +9,7 @@ function scrollTop() {
 scrollTop();
 window.addEventListener('scroll', scrollTop);
 // ======================= menu ==========================
+const header = document.querySelector('header');
 const menuButton = document.querySelector('.menu_btn');
 const svgMenuButton = document.querySelector('.menu_btn .ham');
 const headerMenu = document.querySelector('.header_menu_box');
@@ -29,7 +30,7 @@ overlay.addEventListener('click', (e) => {e.preventDefault(); openMenu();});
 
 let isExecuted = false;
 window.addEventListener('resize', () => {
-  if (window.innerWidth >= 1350) {
+  if (window.innerWidth >= 1350 && !header.classList.contains('header_search')) {
     if (!isExecuted && headerMenu.classList.contains('header_menu--active')) {
       openMenu();
       isExecuted = true;
@@ -52,7 +53,7 @@ function headerResetSubMenu() {
 
 headerMenuLinkList.forEach((link) => {
   link.addEventListener('click', (e) => {
-    if (window.innerWidth > 1350) return;
+    if (window.innerWidth > 1350 && !header.classList.contains('header_search')) return;
     e.preventDefault();
     
     const subMenu = e.currentTarget.nextElementSibling;

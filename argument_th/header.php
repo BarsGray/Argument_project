@@ -14,7 +14,7 @@
 ?>
 <body>
   <div class="overlay"></div>
-  <header class="header">
+  <header class="header<?php if(is_search()) echo ' header_search'; ?>">
     <div class="header_top_row">
       <div class="container">
         <?php if($adress_main): ?>
@@ -44,8 +44,10 @@
             </div>
           </div>
           <form class="search_form" method="get" action="/">
-            <button type="submit"><?php echo SVG_SEARCH; ?></button>
-            <input type="search" name="s">
+            <input type="search" name="s" placeholder=" ">
+            <span class="search_icon"></span>
+            <button type="reset"><?php echo SVG_SEARCH_RST; ?></button>
+            <button type="submit">Найти</button>
           </form>
           <a href="#" class="header_main_btn">Заказать звонок</a>
           <a href="#" class="menu_btn"><?php echo SVG_MENU_BTN; ?></a>

@@ -327,10 +327,7 @@ function show_contacts() { ?>
 function show_map() { ?>
   <?php if($map = get_field('map')): ?>
     <div class="section_map">
-      <div class="container">
-        <?php echo $map; ?>
-        <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A83cf8d7425626ec21bd08adbe5ac0ff273577070af46c183a6ef0f726175b185&amp;width=1280&amp;height=503&amp;lang=ru_RU&amp;scroll=true"></script> -->
-      </div>
+      <div class="container"><?php echo $map; ?></div>
     </div>
   <?php endif; ?>
 <?php }
