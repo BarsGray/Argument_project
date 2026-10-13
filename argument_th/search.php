@@ -39,7 +39,6 @@
     </div>
   </div>
 </div>
-<?php // the_posts_pagination(); ?>
 <?php
-show_form();
-get_footer(); ?>
+  show_form();
+  get_footer(); ?>
