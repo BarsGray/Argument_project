@@ -104,6 +104,7 @@ const fancyMainParams = {
   Carousel: {Toolbar: {display: {left: [],middle: [],right: ['close']}}}
 }
 Fancybox.bind('[data-fancybox="gallery_license"]', fancyMainParams);
+Fancybox.bind('[data-popup_box]', {type: 'inline'});
 // ============================ tubs =============================
 const tubs_row = document.querySelector('.services_tubs_row');
 

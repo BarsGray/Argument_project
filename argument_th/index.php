@@ -1,5 +1,5 @@
-<?php /* Template Name: Главная */ get_header(); ?>
-  <?php $slaider = get_field('slaider'); ?>
+<?php /* Template Name: Главная */ get_header();
+  $slaider = get_field('slaider'); ?>
   <div class="section_bunner">
     <div class="container">
       <div class="bunner_swiper swiper">
@@ -9,7 +9,7 @@
               <div class="bunner_content">
                 <p class="bunner_slide_title"><?php echo $slide['slider_title']; ?></p>
                 <p class="bunner_slide_text"><?php echo $slide['slider_text']; ?></p>
-                <a href="#" class="bunner_slide_btn">Получить консультацию</a>
+                <a class="bunner_slide_btn" data-popup_box href="#popup_box">Получить консультацию</a>
               </div>
               <div class="bunner_img" style="background-image: url('<?php echo $slide['slider_image']; ?>"></div>
             </div>
@@ -41,25 +41,9 @@
         </div>
       </div>
     </div>
-  <?php wp_reset_postdata(); endif; ?>
-
-  <div class="sectiot_qr">
-    <div class="container">
-      <div class="qr_inner">
-        <div class="qr_content">
-          <p class="qr_title">Управление охраной в одно касание</p>
-          <p class="qr_text">Управляйте системой безопасности удаленно: ставьте объекты под защиту, отслеживайте события, пополняйте счет и вызывайте тревожную группу — всё через мобильное приложение.</p>
-          <div class="qr_links">
-            <a href="#" class="qr" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/6a4202141.png');"></a>
-            <a href="#" class="app_stor"></a>
-            <a href="#" class="g_play"></a>
-          </div>
-        </div>
-        <div class="qr_dec"></div>
-      </div>
-    </div>
-  </div>
-
+  <?php wp_reset_postdata(); endif;
+    show_qr_box();
+  ?>
   <div class="section_integration">
     <div class="container">
       <div class="integration_top_row">
@@ -99,28 +83,20 @@
     </div>
   </div>
 
-  <div class="section_labels">
-    <div class="container"><p class="labels_title">Нам доверяют</p></div>
-    <div class="labels_marquee">
-      <div class="labels_track">
-        <ul class="labels_list">
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/Agrokultura_logo_rus 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/image 36.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/foni-papik-pro-vcc0-p-kartinki-gazpromneft-logo-na-prozrachnom-f-9 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/Frame 9163.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/image 36.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/Agrokultura_logo_rus 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/image 37.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/MTSBank_Logo_800px 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/ycykLdD3Nbx-y9TqPQUxoaPUvWif699DYC-9U3kDpDEKDNODjLctMcCqRW4idwuBlpopV1yaJoaS8FXtMKRynOap 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/Agrokultura_logo_rus 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/AnderSon_logo-1024x364 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/foni-papik-pro-vcc0-p-kartinki-gazpromneft-logo-na-prozrachnom-f-9 1.png');"></div></li>
-          <li><div class="label_logo" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/labels/Frame 9163.png');"></div></li>
-        </ul>
+  <?php if($labels_trust = get_field('labels_trust')): ?>
+    <div class="section_labels">
+      <div class="container"><p class="labels_title">Нам доверяют</p></div>
+      <div class="labels_marquee">
+        <div class="labels_track">
+          <ul class="labels_list">
+            <?php foreach($labels_trust as $item): ?>
+              <li><div class="label_logo" style="background-image: url('<?php echo $item['labele']; ?>');"></div></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 
 <?php
   show_form();

@@ -1,7 +1,13 @@
-<?php get_header(); ?>
-<div class="section_404">
-  <div class="container">
-    <p>404</p>
+<?php
+  get_header();
+  title_def_box();
+?>
+  <div class="section_404">
+    <div class="container">
+      <p>Страница не найдена... Вы можете вернуться на <a class="link_on" href="/">главную</a>.</p>
+    </div>
   </div>
-</div>
-<?php get_footer();
+<?php
+  show_qr_box();
+  show_form();
+  get_footer();

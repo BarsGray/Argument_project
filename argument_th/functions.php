@@ -103,7 +103,7 @@ function show_get_quote() { ?>
           <p class="feed_text">Подберем оптимальный формат сопровождения, оценим уровень рисков и предложим решение, которое обеспечит безопасность вам и вашим близким.</p>
         </div>
         <div class="feed_right_box">
-          <a class="feed_btn" href="#">Заказать услугу</a>
+          <a class="feed_btn" data-popup_box href="#popup_box">Заказать услугу</a>
           <?php if ($phone_main  = get_field('phone_main', 30)): ?>
             <a class="feed_num" href="tel:<?php echo merge_numbers($phone_main); ?>"><span class="feed_icon_phone"><?php echo SVG_PHONE_QUOTE; ?></span><?php echo $phone_main; ?></a>
           <?php endif; ?>
@@ -120,9 +120,16 @@ function show_qr_box() { ?>
           <p class="qr_title">Управление охраной в одно касание</p>
           <p class="qr_text">Управляйте системой безопасности удаленно: ставьте объекты под защиту, отслеживайте события, пополняйте счет и вызывайте тревожную группу — всё через мобильное приложение.</p>
           <div class="qr_links">
-            <a href="#" class="qr" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/6a4202141.png');"></a>
-            <a href="#" class="app_stor"></a>
-            <a href="#" class="g_play"></a>
+            <?php $gplay_link = get_field('gplay_link',12);
+              if ($qr_code = get_field('qr_code',12)): ?>
+                <a <?php echo $gplay_link; ?> href="#" class="qr" style="background-image: url('<?php echo $qr_code; ?>');"></a>
+              <?php endif; ?>
+              <?php if ($appstore_link = get_field('appstore_link',12)): ?>
+                <a href="<?php echo $appstore_link; ?>" class="app_stor"></a>
+              <?php endif; ?>
+              <?php if ($gplay_link): ?>
+                <a href="<?php echo $gplay_link; ?>" class="g_play"></a>
+              <?php endif; ?>
           </div>
         </div>
         <div class="qr_dec"></div>
@@ -274,7 +281,7 @@ function show_vacancies() {
                     <?php endforeach; ?>
                   </ul>
                 <?php endif; ?>
-                <a href="#" class="vacancies_btn">Откликнуться</a>
+                <a data-popup_box href="#popup_box" class="vacancies_btn">Откликнуться</a>
               </div>
             <?php endwhile; ?>
           </div>
@@ -330,4 +337,79 @@ function show_map() { ?>
       <div class="container"><?php echo $map; ?></div>
     </div>
   <?php endif; ?>
+<?php }
+function show_performance() { ?>
+  <div class="section_performance">
+    <div class="container">
+      <div class="performance_inner template_info">
+        <div class="performance_left_box template_info_left_box">
+          <a href="#" class="performance_btn">Получить консультацию</a>
+        </div>
+        <div class="performance_right_box template_info_right_box">
+          <ul class="performance_list">
+            <li class="performance_list_item">
+              <p class="performance_list_num">20+</p>
+              <p class="performance_list_desc">Лет успешной работы</p>
+            </li>
+            <li class="performance_list_item">
+              <p class="performance_list_num">500+</p>
+              <p class="performance_list_desc">Объектов под охраной</p>
+            </li>
+            <li class="performance_list_item">
+              <p class="performance_list_num">7 мин</p>
+              <p class="performance_list_desc">Среднее время реагирования</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php }
+function show_founder() { ?>
+  <div class="section_founder">
+    <div class="container">
+      <div class="dec_line"></div>
+      <div class="template_info">
+        <div class="founder_info template_info_left_box">
+          <?php if($about_foto = get_field('about_foto')): ?>
+            <img class="founder_photo" src="<?php echo $about_foto['sizes']['large']; ?>" alt="<?php echo $about_foto['alt']; ?>">
+          <?php else: ?>
+            <img class="founder_photo" src="<?php echo TEMPLATE_URL; ?>/img/no_founder_photo.svg" alt="No foto">
+          <?php endif; ?>
+          <p class="founder_name">Имя Фамилия</p>
+          <p class="founder_level">Основатель и генеральный директор</p>
+        </div>
+        <div class="founder_content template_info_right_box">
+          <?php if($about_title = get_field('about_title')): ?>
+            <p class="h2"><?php echo $about_title; ?></p>
+          <?php endif;
+            if(get_field('about_text')) the_field('about_text');
+          ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php }
+function show_advantages() { ?>
+  <div class="section_advantages">
+    <div class="container">
+      <ul class="advantages_list">
+        <li class="advantages_item">
+          <div class="advantages_item_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/icons_1.svg');"></div>
+          <p class="advantages_item_title">Лицензия и страховка</p>
+          <p class="advantages_item_text">Все услуги лицензированы, ответственность застрахована.</p>
+        </li>
+        <li class="advantages_item">
+          <div class="advantages_item_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/icons_2.svg');"></div>
+          <p class="advantages_item_title">Адаптивная стратегия</p>
+          <p class="advantages_item_text">Разрабатываем план защиты под каждый объект с учётом всех рисков.</p>
+        </li>
+        <li class="advantages_item">
+          <div class="advantages_item_icon" style="background-image: url('<?php echo TEMPLATE_URL; ?>/img/icons_3.svg');"></div>
+          <p class="advantages_item_title">Cлужба контроля</p>
+          <p class="advantages_item_text">Многоуровневая проверка качества и работы персонала на объектах.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 <?php }

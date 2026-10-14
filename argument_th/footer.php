@@ -12,7 +12,7 @@
           <?php wp_nav_menu('menu=Меню в подвале&container=nav') ?>
         </div>
         <div class="footer_right">
-          <a class="footer_main_btn" href="#">Заказать звонок</a>
+          <a class="footer_main_btn" data-popup_box href="#popup_box">Заказать звонок</a>
           <?php if($adress_main): ?>
             <div class="footer_contact_elem">
               <p class="footer_contact_label">Адрес</p>
@@ -35,6 +35,13 @@
       </div>
     </div>
   </footer>
+  <div id="popup_box" class="popup_box" style="display: none;">
+    <div class="top_box">
+      <p class="popup_title">Оставьте заявку</p>
+      <p class="popup_text">Свяжемся с вами в ближайшее время, ответим на вопросы и подберём оптимальное решение.</p>
+    </div>
+    <?php echo do_shortcode('[contact-form-7 id="08e9a27"]'); ?>
+  </div>
   <?php wp_footer(); ?>
 </body>
 </html>

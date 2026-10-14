@@ -40,7 +40,7 @@
               <?php if($phone_main): ?>
                 <a href="tel:<?php echo merge_numbers($phone_main); ?>" class="header_tel"><?php echo SVG_PHONE . $phone_main; ?></a>
               <?php endif; ?>
-              <a href="#" class="header_main_btn">Заказать звонок</a>
+              <a class="header_main_btn" data-popup_box href="#popup_box">Заказать звонок</a>
             </div>
           </div>
           <form class="search_form" method="get" action="/">
@@ -49,7 +49,7 @@
             <button type="reset"><?php echo SVG_SEARCH_RST; ?></button>
             <button type="submit">Найти</button>
           </form>
-          <a href="#" class="header_main_btn">Заказать звонок</a>
+          <a class="header_main_btn" data-popup_box href="#popup_box">Заказать звонок</a>
           <a href="#" class="menu_btn"><?php echo SVG_MENU_BTN; ?></a>
         </div>
       </div>
