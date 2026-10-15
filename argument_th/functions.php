@@ -72,8 +72,7 @@ function show_info() {
         </div>
       </div>
     </div>
-<?php endif;
-}
+<?php endif; }
 function show_license() {
   $license = get_field('license');
   if ($license): ?>

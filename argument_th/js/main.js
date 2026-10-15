@@ -269,3 +269,35 @@ allForms.forEach(form => {
     }
   }, true);
 });
+// ======================= show more content =======================
+document.querySelectorAll('.hide').forEach(hideContainer => {
+  const hideTextContainer = hideContainer.querySelector('.hide_text');
+  const btnMore = hideContainer.querySelector('.more');
+
+  if (!hideTextContainer || !btnMore) return;
+
+  if (hideTextContainer.scrollHeight > 300) {
+    hideTextContainer.style.maxHeight = '300px';
+
+    btnMore.addEventListener('click', () => {
+      const isActive = hideTextContainer.classList.toggle('active');
+      
+      hideContainer.classList.toggle('active', isActive);
+      btnMore.classList.toggle('active', isActive);
+      if (isActive) {
+        btnMore.textContent = 'Свернуть';
+        btnMore.classList.add('active');
+
+        hideTextContainer.style.maxHeight = hideTextContainer.scrollHeight + 'px';
+      } else {
+        btnMore.textContent = 'Подробнее';
+        btnMore.classList.remove('active');
+
+        hideTextContainer.style.maxHeight = '300px';
+      }
+    });
+  } else {
+    btnMore.style.display = 'none';
+    setTimeout(()=>{hideContainer.classList.remove('hide');},500);
+  }
+});
