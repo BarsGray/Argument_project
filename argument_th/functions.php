@@ -23,11 +23,26 @@ function title_def_box() { ?>
   <div class="section_title_box">
     <div class="container">
       <div class="title_box_inner">
-        <p class="title"><?php if (is_singular('service')) echo 'Услуги'; else show_title(); ?></p>
+        <p class="title"><?php show_title(); ?></p>
       </div>
     </div>
   </div>
 <?php }
+function show_services_tubs($service_id = '') {
+  $query = new WP_Query(['post_type' => 'service', 'post_per_page' => -1]);
+  if($query->have_posts()): ?>
+    <div class="section_services_tubs">
+      <div class="container">
+        <ul class="services_tubs_row">
+          <?php while($query->have_posts()): $query->the_post(); ?>
+            <li class="services_tub_item <?php if(get_the_ID() === $service_id) echo 'active'; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    </div>
+  <?php wp_reset_postdata();
+  endif;
+}
 function show_form() { ?>
   <div class="section_form">
     <div class="container">

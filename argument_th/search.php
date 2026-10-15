@@ -1,4 +1,6 @@
 <?php get_header();
+  show_breadcrumbs();
+
   global $wp_query;
   $count = (int) $wp_query->found_posts;
 ?>

@@ -61,24 +61,23 @@ function breadcrumbs($sep = ' / ', $args = array(), $l10n = array()) {
 	echo $inst->get_crumbs($sep, $l10n, $args);
 }
 
-// add_action('kama_breadcrumbs_home_after','add_tax_custom',10,5);
-// function add_tax_custom($false,$linkpatt,$sep,$ptype,$q_obj){
-// 	if(!is_search()){
-// 		$data_taxs=array(
-// 			'service' => 193,
-// 			'product' => 12
-// 		);
-// 		foreach($data_taxs as $post_type=>$id_page){
-// 			if(isset($ptype->name) && $ptype->name==$post_type){
-// 				$page=get_post($id_page);
-// 				if($q_obj->name==$post_type)
-// 					return $home_after=sprintf($linkpatt,get_permalink($page),$page->post_title); 
-// 				else
-// 					return $home_after=sprintf($linkpatt,get_permalink($page),$page->post_title) . $sep;
-// 			}
-// 		}
-// 	}
-// }
+add_action('kama_breadcrumbs_home_after','add_tax_custom',10,5);
+function add_tax_custom($false,$linkpatt,$sep,$ptype,$q_obj){
+	if(!is_search()){
+		$data_taxs=array(
+			'service' => 15,
+		);
+		foreach($data_taxs as $post_type=>$id_page){
+			if(isset($ptype->name) && $ptype->name==$post_type){
+				$page=get_post($id_page);
+				if($q_obj->name==$post_type)
+					return $home_after=sprintf($linkpatt,get_permalink($page),$page->post_title); 
+				else
+					return $home_after=sprintf($linkpatt,get_permalink($page),$page->post_title) . $sep;
+			}
+		}
+	}
+}
 function merge_numbers($num) {return str_replace([' ', '-', '(', ')'],'',(string) ($num ?? ''));}
 function register_service() {
 	$post_labels = array(
@@ -177,6 +176,7 @@ function plural_results($number) {
 function custom_search_post_types($query) {
 	if (!is_admin() && $query->is_main_query() && $query->is_search()) {
 		$query->set('post_type', ['service', 'post']);
+		if ($query->is_search() && empty(trim(get_query_var('s')))) $query->set('post__in', [0]);
 	}
 }
 add_action('pre_get_posts', 'custom_search_post_types');

@@ -1,6 +1,6 @@
 <?php
 get_header();
-// show_breadcrumbs();
+show_breadcrumbs();
 title_def_box();
 show_info();
 
@@ -9,6 +9,7 @@ if(is_page(27)) show_recvezits();
 if(is_page(22)) {show_rewiews(); show_qr_box();}
 if(is_page(25)) show_vacancies();
 if(is_page(30)) {show_contacts(); show_map();}
+if(is_page(15)) {show_services_tubs();}
 if(is_page(17)) {show_performance();show_founder();show_advantages();show_qr_box();}
 
 show_form();
