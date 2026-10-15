@@ -34,6 +34,11 @@
 	</div>
 </div>
 
-<?php
+<?php if(get_field('text_after')): ?>
+  <div class="content_container hide">
+    <div class="hide_text"><?php the_field("text_after");?></div>
+    <a class="more">Подробнее</a>
+  </div>
+<?php endif;
   show_form();
   get_footer();

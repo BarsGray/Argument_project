@@ -14,10 +14,8 @@ if(is_page(17)) {show_performance();show_founder();show_advantages();}
 
 if(get_field('text_after')): ?>
   <div class="content_container hide">
-    <div class="container">
-      <div class="hide_text"><?php the_field("text_after");?></div>
-      <a class="more">Подробнее</a>
-    </div>
+    <div class="hide_text"><?php the_field("text_after");?></div>
+    <a class="more">Подробнее</a>
   </div>
 <?php endif;
 if(is_page(22)) show_qr_box();

@@ -70,10 +70,8 @@ if ($armed_security_price || $unarmed_security_price || $security_price_text || 
 <?php endif;
   if(get_field('text_after')): ?>
   <div class="content_container hide">
-    <div class="container">
-      <div class="hide_text"><?php the_field("text_after");?></div>
-      <a class="more">Подробнее</a>
-    </div>
+    <div class="hide_text"><?php the_field("text_after");?></div>
+    <a class="more">Подробнее</a>
   </div>
 <?php endif;
   show_get_quote();
