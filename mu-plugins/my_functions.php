@@ -180,9 +180,3 @@ function custom_search_post_types($query) {
 	}
 }
 add_action('pre_get_posts', 'custom_search_post_types');
-
-// // добавление класса current-menu-item для каталога, при нахождении категории
-// add_filter('nav_menu_css_class', function ($classes, $item) {
-//     if (is_tax('product_cat') && $item->ID == 123) { $classes[] = 'current-menu-item'; }
-//     return $classes;
-// }, 10, 2);
