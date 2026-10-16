@@ -427,3 +427,27 @@ function show_advantages() { ?>
     </div>
   </div>
 <?php }
+function show_table_price() { ?>
+  <div class="section_table_price">
+    <div class="container">
+      <div class="table_price_inner">
+        <table>
+          <tbody>
+            <tr>
+              <td>№п/п</td><td class="middle">Наименование услуги</td><td>Цена, руб./мес.</td>
+            </tr>
+            <?php if ($table_prices = get_field('table_prices')): ?>
+              <?php foreach($table_prices as $item): ?>
+                <tr<?php if($item['row_highlight']) echo ' class="highlight"'; ?>>
+                  <td><?php echo $item['table_prices_num']; ?></td>
+                  <td class="middle"><?php echo $item['service_name']; ?></td>
+                  <td><?php echo $item['price']; ?></td>
+                </tr>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<?php }

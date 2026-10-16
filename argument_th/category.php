@@ -10,7 +10,6 @@
 <div class="section_category">
 	<div class="container">
 		<div class="category_inner">
-      <?php /*<p class="category_inner_title"><?php show_title(); ?></p>*/ ?>
 			<?php if(have_posts()) {
 				while(have_posts()) { the_post();
 						$link = get_permalink(); ?>
@@ -27,10 +26,10 @@
 							</div>
 						</div>
 					<?php } ;
-				// wp_pagenavi();
 			} else echo '<p>Раздел не заполнен</p>'; ?>
 			<?php the_field("text_after", $qo); ?>
 		</div>
+		<?php wp_pagenavi(); ?>
 	</div>
 </div>
 
