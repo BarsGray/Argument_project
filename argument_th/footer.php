@@ -34,6 +34,13 @@
         <p><a href="https://www.vzh.ru/"><img src="<?php echo TEMPLATE_URL; ?>/img/logo_vzh.svg" alt="vzh.ru"></a></p>
       </div>
     </div>
+    <div class="polit">
+      <div class="container">
+        <p><a class="privacy-policy-link" href="/privacy-policy/" rel="privacy-policy">Политика конфиденциальности</a></p>
+        <p><a href="/politika-ispolzovaniya-fajlov-cookie/">Политика использования файлов cookie</a></p>
+        <p><a href="/soglasie-na-obrabotku-personalnyh-dannyh/">Согласие на обработку персональных данных</a></p>
+      </div>
+    </div>
   </footer>
   <div id="popup_box" class="popup_box" style="display: none;">
     <div class="top_box">
@@ -42,6 +49,10 @@
     </div>
     <?php echo do_shortcode('[contact-form-7 id="08e9a27"]'); ?>
   </div>
+  <?php 
+    if(!isset($_COOKIE['gdpr_site']))
+      echo '<div class="gdpr"><p>Продолжая использовать наш веб-сайт, вы соглашаетесь на использование файлов cookie в соответствии с нашей <a href="'.get_privacy_policy_url().'" target="_blank">политикой конфиденциальности</a>.</p><a href="#">Хорошо</a></div>';
+  ?>
   <?php wp_footer(); ?>
 </body>
 </html>

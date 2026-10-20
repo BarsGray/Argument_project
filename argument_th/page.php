@@ -4,6 +4,12 @@ show_breadcrumbs();
 title_def_box();
 show_info();
 
+if(get_the_content()): ?>
+  <div class="content_container">
+    <?php echo the_content(); ?>
+  </div>
+<?php endif;
+
 if(is_page(19)) {show_license(); show_docs();}
 if(is_page(27)) show_recvezits();
 if(is_page(22)) {show_rewiews();}

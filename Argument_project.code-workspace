@@ -4,7 +4,13 @@
 			"path": "."
 		},
 		{
+			"path": "../tehmonolit_project"
+		},
+		{
 			"path": "../delica_project"
+		},
+		{
+			"path": "../cookies-politika"
 		}
 	],
 	"settings": {}
