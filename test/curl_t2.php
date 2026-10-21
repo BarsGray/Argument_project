@@ -39,7 +39,7 @@ foreach ($items as $item) {
         echo 'Название: ' . htmlspecialchars($name, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '<br>';
         echo 'Ссылка: ' . htmlspecialchars($link, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '<br><hr>';
 
-        $products[] = ['name' => $name, 'url'  => $url];
+        $products[] = ['name' => $name, 'url'  => $link];
     }
 }
 
