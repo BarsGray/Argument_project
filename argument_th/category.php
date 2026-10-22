@@ -1,12 +1,14 @@
 <?php
   get_header();
   show_breadcrumbs();
-	title_def_box(); ?>
-<?php
+
 	$qo=get_queried_object();
 	$paged = get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
 	query_posts(array('cat' => $qo->term_id,'paged' => $paged));
+
+	title_def_box(get_field('alt_zag', $qo));
 ?>
+<?php if(get_field('text_before', $qo)): ?><div class="content_container"><?php the_field('text_before', $qo) ?></div><?php endif; ?>
 <div class="section_category">
 	<div class="container">
 		<div class="category_inner">
@@ -27,15 +29,14 @@
 						</div>
 					<?php } ;
 			} else echo '<p>Раздел не заполнен</p>'; ?>
-			<?php the_field("text_after", $qo); ?>
 		</div>
 		<?php wp_pagenavi(); ?>
 	</div>
 </div>
 
-<?php if(get_field('text_after')): ?>
+<?php if(get_field('text_after', $qo)): ?>
   <div class="content_container hide">
-    <div class="hide_text"><?php the_field("text_after");?></div>
+    <div class="hide_text"><?php the_field("text_after", $qo);?></div>
     <a class="more">Подробнее</a>
   </div>
 <?php endif;

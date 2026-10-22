@@ -1086,6 +1086,7 @@ form input[type='text']:focus,form input[type='tel']:focus {border-color: var(--
   box-shadow: 0px 10px 40px 0px #FFA2A2CC;
 }
 
+.section_category {margin: 40px 0;}
 .category_inner {padding: 60px;background-color: #fff;border-radius: 30px;}
 .category_item + .category_item {margin-top: 40px;padding-top: 40px;border-top: 1px solid #D5D5D5;}
 .category_item_name {
@@ -1458,6 +1459,7 @@ form input[type='text']:focus,form input[type='tel']:focus {border-color: var(--
   .result_item p {margin-bottom: 12px;}
   .result_type {margin-top: 12px;}
   .results_box_inner {padding: 12px;border-radius: 20px;}
+  .section_category {margin: 30px 0;}
   .category_inner {border-radius: 20px;}
   .count_results {margin-bottom: 30px;}
   .popup_box {padding: 20px;max-width: 396px;border-radius: 20px;}
@@ -1555,29 +1557,10 @@ h6,.h6 {font-size: 22px;}
 .founder_content ul li {margin-bottom: 20px;list-style: disc;}
 .founder_content ol li {margin-bottom: 20px;}
 .content_container ul,
-.content_container ol {
-  line-height: 1.4;
-  font-size: var(--text_size_medium);
-  position: relative;
-  left: 30px;
-  width: calc(100% - 30px);
-}
-.content_container table {
-  display: block;
-  overflow-x: auto;
-  width: 100%;
-  border-collapse: collapse;
-  padding-bottom: 20px;
-}
-.content_container table tr:not(.highlight) {
-  background-color: #fff;
-}
-.content_container table td {
-  border: 1px solid #C9C9C9;
-  padding: 16px;
-  font-size: 16px;
-  line-height: 1.4;
-}
+.content_container ol {line-height: 1.4;font-size: var(--text_size_medium);position: relative;left: 30px;width: calc(100% - 30px);}
+.content_container table {display: block;overflow-x: auto;width: 100%;border-collapse: collapse;padding-bottom: 20px;}
+.content_container table tr:not(.highlight) {background-color: #fff;}
+.content_container table td {border: 1px solid #C9C9C9;padding: 16px;font-size: 16px;line-height: 1.4;}
 .content_container table::-webkit-scrollbar {width: 4px;height: 4px;}
 .content_container table::-webkit-scrollbar-track {background: #fff;border-radius: 10px;}
 .content_container table::-webkit-scrollbar-thumb {background: var(--akcent_color_hover);border-radius: 10px;}
@@ -1683,11 +1666,7 @@ a.more.active::before,a.more.active::after {display: none;}
 .wp-pagenavi a.nextpostslink::after {background: url('img/bun_btn_next.svg') no-repeat center center #F2F2F2;}
 .wp-pagenavi a.previouspostslink::after {background: url("img/bun_btn_prev.svg") center center no-repeat #F2F2F2;}
 @media (hover: hover) {
-  .wp-pagenavi a.page:hover, .wp-pagenavi span.current {
-    background-color: var(--akcent_color_hover);
-    color: #fff;
-    border-color: var(--akcent_color_hover);
-  }
+  .wp-pagenavi a.page:hover, .wp-pagenavi span.current {background-color: var(--akcent_color_hover);color: #fff;border-color: var(--akcent_color_hover);}
   .wp-pagenavi a.nextpostslink:hover, .wp-pagenavi a.previouspostslink:hover {border-color: var(--akcent_color_hover);}
   .wp-pagenavi a.nextpostslink:hover::after, .wp-pagenavi a.previouspostslink:hover::after {opacity: 1;}
 }

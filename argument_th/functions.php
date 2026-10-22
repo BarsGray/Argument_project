@@ -6,25 +6,24 @@ function show_breadcrumbs() { ?>
     </div>
   </div>
 <?php }
-function show_title() {
+function show_title(string $h1_alt_zag) {
   $title = '';
-  $alt_zag = get_field('alt_zag');
-
+  $alt_zag = $h1_alt_zag ?: get_field('alt_zag');
   if (is_tax())
     $title = $alt_zag ?: single_term_title('', false);
   elseif(is_category())
-    $title = single_cat_title('', false);
+    $title = $alt_zag ?: single_cat_title('', false);
   elseif(is_404())
     $title = 'Ошибка 404!';
   else
     $title = $alt_zag ?: get_the_title();
   echo $alt_zag ? "<h1 class='title'>$title</h1>" : "<p class='title'>$title</p>";
 }
-function title_def_box() { ?>
+function title_def_box(string $h1_alt_zag = '') { ?>
   <div class="section_title_box">
     <div class="container">
       <div class="title_box_inner">
-        <?php show_title(); ?>
+        <?php show_title($h1_alt_zag); ?>
       </div>
     </div>
   </div>
