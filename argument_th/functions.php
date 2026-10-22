@@ -30,7 +30,7 @@ function title_def_box() { ?>
   </div>
 <?php }
 function show_services_tubs($service_id = '') {
-  $query = new WP_Query(['post_type' => 'service', 'post_per_page' => -1]);
+  $query = new WP_Query(['post_type' => 'service', 'posts_per_page' => -1]);
   if($query->have_posts()): ?>
     <div class="section_services_tubs">
       <div class="container">

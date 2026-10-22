@@ -22,7 +22,7 @@
     </div>
   </div>
   
-  <?php $query = new WP_Query(['post_type' => 'service', 'post_per_page' => -1]);
+  <?php $query = new WP_Query(['post_type' => 'service', 'posts_per_page' => 6, 'orderby' => 'name', 'order' => 'ASC']);
   if ($query->have_posts()): ?>
     <div class="section_services">
       <div class="container">
