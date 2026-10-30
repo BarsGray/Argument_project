@@ -198,9 +198,10 @@ body {font-family: 'Onest';font-weight: 400;background-color: #F4F4F4;height: fi
 .header_menu_box form.search_form {white-space: nowrap;}
 .header_menu_box .current-menu-item>a {color: var(--akcent_color_hover);}
 .header_menu_box .menu-item-has-children {position: relative;}
-.header_menu_box .menu-item-has-children>ul>li {margin: 0;min-width: 200px;}
+.header_menu_box .menu-item-has-children>ul>li {margin: 0;}
 .header_menu_box .menu-item-has-children>ul {
   position: absolute;
+  min-width: 200px;
   top: 100%;
   left: 0;
   display: flex;
