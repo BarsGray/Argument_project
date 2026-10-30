@@ -1,4 +1,6 @@
 jQuery(function ($) {
+// jQuery(window).on('load', function () {
+// const $ = jQuery;
   // ======================= header =============
   function scrollTop() {
     let scroll_scr = window.scrollY;
@@ -9,6 +11,23 @@ jQuery(function ($) {
   }
   scrollTop();
   window.addEventListener('scroll', scrollTop);
+
+  // // ++++++++++++++++++++++++++++ tubs ++++++++++++++++++++++++++++++++++++++++++++
+	// const tubs_row = document.querySelector('.services_tubs_row');
+	// const btn_prev = document.querySelector('.services_tubs_btn_prev');
+	// const btn_next = document.querySelector('.services_tubs_btn_next');
+
+	// if (tubs_row) {
+	// 	const activeTab = tubs_row.querySelector('.active');
+
+	// 	tubs_row.addEventListener('wheel', (e) => {
+	// 		e.preventDefault();
+	// 		const direction = e.deltaY > 0 ? 1 : -1;
+	// 		const scrollStep = tubs_row.clientWidth - 200;
+
+	// 		tubs_row.scrollBy({ left: direction * scrollStep, behavior: 'smooth' });
+	// 	}, { passive: false });
+	// }
   // ======================= menu ==========================
   const header = document.querySelector('header');
   const menuButton = document.querySelector('.menu_btn');
@@ -91,13 +110,34 @@ jQuery(function ($) {
     // loop:true,
     slidesPerView: 2,
     slidesPerGroup: 1,
-    spaceBetween: 10, 
+    spaceBetween: 10,
     scrollbar: {el: '.license_slider_pagination'},
     breakpoints: {
       610: {slidesPerView: 3,spaceBetween: 12},
       750: {slidesPerView: 4,spaceBetween: 12},
       1100: {slidesPerView: 4,spaceBetween: 30},
     }
+  });
+  // ======================== swiper_services_tubs =======================
+  const slides = document.querySelectorAll('.services_tubs .swiper-slide');
+  const activeIndex = [...slides].findIndex(slide => slide.classList.contains('active'));
+  const tubs_slider = new Swiper('.services_tubs', {
+    loop:true,
+    slidesPerView: 'auto',
+    initialSlide: activeIndex >= 0 ? activeIndex : 0,
+    speed: 400,
+    slidesPerGroup: 1,
+    grabCursor: true,
+    mousewheel: true,
+    navigation: {
+      nextEl: ".section_services_tubs .bunner_btn_next",
+      prevEl: ".section_services_tubs .bunner_btn_prev"
+    },
+    // autoplay: {
+    //     delay: 2000,
+    //     disableOnInteraction: false,
+    //     pauseOnMouseEnter: true
+    // }
   });
   // ========================== fancybox ===========================
   const fancyMainParams = {
@@ -106,20 +146,6 @@ jQuery(function ($) {
   }
   Fancybox.bind('[data-fancybox="gallery_license"]', fancyMainParams);
   Fancybox.bind('[data-popup_box]', {type: 'inline'});
-  // ============================ tubs =============================
-  const tubs_row = document.querySelector('.services_tubs_row');
-
-  if (tubs_row) {
-    const activeTab = tubs_row.querySelector('.active');
-
-    tubs_row.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      const direction = e.deltaY > 0 ? 1 : -1;
-      const scrollStep = 200;
-
-      tubs_row.scrollBy({ left: direction * scrollStep, behavior: 'smooth' });
-    }, { passive: false });
-  }
   // ======================= marquee ==========================
   const marquee = document.querySelector('.labels_marquee');
   const track = document.querySelector('.labels_track');

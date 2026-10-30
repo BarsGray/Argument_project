@@ -6,7 +6,7 @@ function show_breadcrumbs() { ?>
     </div>
   </div>
 <?php }
-function show_title(string $h1_alt_zag) {
+function show_title($h1_alt_zag) {
   $title = '';
   $alt_zag = $h1_alt_zag ?: get_field('alt_zag');
   if (is_tax())
@@ -19,7 +19,7 @@ function show_title(string $h1_alt_zag) {
     $title = $alt_zag ?: get_the_title();
   echo $alt_zag ? "<h1 class='title'>$title</h1>" : "<p class='title'>$title</p>";
 }
-function title_def_box(string $h1_alt_zag = '') { ?>
+function title_def_box($h1_alt_zag = '') { ?>
   <div class="section_title_box">
     <div class="container">
       <div class="title_box_inner">
@@ -33,11 +33,15 @@ function show_services_tubs($service_id = '') {
   if($query->have_posts()): ?>
     <div class="section_services_tubs">
       <div class="container">
-        <ul class="services_tubs_row">
-          <?php while($query->have_posts()): $query->the_post(); ?>
-            <li class="services_tub_item <?php if(get_the_ID() === $service_id) echo 'active'; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-          <?php endwhile; ?>
-        </ul>
+        <div class="services_tubs swiper">
+          <ul class="services_tubs_row swiper-wrapper">
+            <?php while($query->have_posts()): $query->the_post(); ?>
+              <li class="services_tub_item swiper-slide <?php if(get_the_ID() === $service_id) echo 'active'; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; ?>
+          </ul>
+        </div>
+        <div class="bunner_btn_prev"></div>
+        <div class="bunner_btn_next"></div>
       </div>
     </div>
   <?php wp_reset_postdata();

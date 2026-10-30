@@ -6,6 +6,12 @@
   $service_id = get_the_ID();
   show_services_tubs($service_id);
 
+  if(get_the_content()): ?>
+    <div class="content_container">
+      <?php echo the_content(); ?>
+    </div>
+  <?php endif;
+
   $drop_down_list = get_field('drop_down_list');
   $drop_down_title = get_field('drop_down_title');
   $drop_down_text_sub_title = get_field('drop_down_text_sub_title');
