@@ -34,11 +34,11 @@ function argument_th_scripts_style() {
 	wp_enqueue_style('argument_th-style', get_stylesheet_uri(), array(), _S_VERSION);
 }
 
-add_filter('site_transient_update_plugins','filter_plugin_updates');
-function filter_plugin_updates($value){
-	unset($value->response['all-in-one-seo-pack/all_in_one_seo_pack.php']);
-	return $value;
-}
+// add_filter('site_transient_update_plugins','filter_plugin_updates');
+// function filter_plugin_updates($value){
+// 	unset($value->response['all-in-one-seo-pack/all_in_one_seo_pack.php']);
+// 	return $value;
+// }
 
 // add_action('template_redirect','template_redirect');
 // function template_redirect() {
